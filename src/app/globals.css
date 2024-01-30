@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,3 +12,16 @@
   font-weight: 300;
   letter-spacing: 0.5px;
 }
+
+/* .pulse:before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: 1px;
+  background: #fafafc;
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  -webkit-animation: puls 1s infinite;
+  animation: pulse 1s infinite;
+} */

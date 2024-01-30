@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export function ProfileCard() {
   return (
-    <div className="h-screen bg-red-600">
+    <div className="h-screen">
       <section
         className="bg-[#20202a] w-[290px] min-w-[290px] shadow-md  relative z-40"
         style={{ height: "calc(100vh - 30px)" }}

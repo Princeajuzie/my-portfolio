@@ -16,7 +16,7 @@ export default function Home() {
             <section className="relative bg-gradient-to-b from-[rgba(30,30,40,0.93)] via-[rgba(30,30,40,0.96)] to-[rgba(30,30,40,0.99)]  h-screen w-full">
               <div className="h-screen">
                 <div className="grid grid-cols-2">
-                  <div className="h-screen bg-blue-600">
+                  <div className="h-screen ">
                     <ProfileCard />
                   </div>
                   <div></div>

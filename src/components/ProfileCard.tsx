@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export function ProfileCard() {
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-red-600">
       <section
         className="bg-[#20202a] w-[290px] min-w-[290px] shadow-md  relative z-40"
         style={{ height: "calc(100vh - 30px)" }}
@@ -41,20 +41,20 @@ export function ProfileCard() {
 
           </div>
         </div>
-        <div className="h-[50px] px-[35px] flex items-center gap-6 bg-gradient-to-r from-[rgba(37,37,50,0.98)] to-[rgba(35,35,45,0.98)] absolute z-50 w-full">
-          <Link href={"#"} className="text-2xl">
+        <div className="h-[50px] px-[35px] flex items-center gap-8 bg-gradient-to-r from-[rgba(37,37,50,0.98)] to-[rgba(35,35,45,0.98)] absolute z-[999] w-full">
+          <Link href={"#"} className="text-base">
             <FaLinkedin />
           </Link>
-          <Link href={"#"} className="text-2xl">
+          <Link href={"#"} className="text-base">
             <FaSquareXTwitter />
           </Link>
-          <Link href={"#"} className="text-2xl">
+          <Link href={"#"} className="text-base">
             <BsGlobe />
           </Link>
-          <Link href={"#"} className="text-2xl">
+          <Link href={"#"} className="text-base">
             <FaGithubSquare />
           </Link>
-          <Link href={"#"} className="text-2xl">
+          <Link href={"#"} className="text-lg">
             <IoIosMail />
           </Link>
         </div>

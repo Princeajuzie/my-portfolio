@@ -14,9 +14,9 @@ export default function Home() {
             className="h-[400px]  w-full overflow-hidden  "
           >
             <section className="relative bg-gradient-to-b from-[rgba(30,30,40,0.93)] via-[rgba(30,30,40,0.96)] to-[rgba(30,30,40,0.99)]  h-screen w-full">
-              <div className="">
+              <div className="h-screen">
                 <div className="grid grid-cols-2">
-                  <div>
+                  <div className="h-screen bg-blue-600">
                     <ProfileCard />
                   </div>
                   <div></div>

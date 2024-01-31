@@ -1,4 +1,5 @@
 import { ProfileCard } from "@/components";
+import Test from "@/components/tesxt";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
               <div className="h-screen">
                 <div className="grid grid-cols-2">
                   <div className="h-screen ">
+                 {/* <Test /> */}
                     <ProfileCard />
                   </div>
                   <div></div>

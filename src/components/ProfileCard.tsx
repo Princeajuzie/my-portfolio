@@ -60,37 +60,112 @@ export function ProfileCard() {
               </ul>
             </div>
             <div className="w-full h-[1px] opacity-[0.3] bg-[#646466]"></div>
-            <div className="py-[10px]">
+            <div className="py-[10px] flex items-center justify-between gap-3">
               <div className="w-[33.3%] text-center items-center flex flex-col">
                 <div className="relative w-[65%] mb-[15px] mr-auto mt-0 text-center flex m-auto items-center flex-col">
-
                   <svg
                     viewBox="0 0 100 100"
-                    style={{ display: "block", width: "100%" }}
+                    style={{
+                      width: "100%",
+                    }}
+                    display="block"
                   >
                     <path
-                      d="M 50,50 m 0,-46.5 a 46.5,46.5 0 1 1 0,93 a 46.5,46.5 0 1 1 0,-93"
+                      d="M50 3.5a46.5 46.5 0 110 93 46.5 46.5 0 110-93"
                       stroke="#eee"
                       strokeWidth={7}
-                      fillOpacity={0}
+                      fill="none"
                     />
                     <path
-                      d="M 50,50 m 0,-46.5 a 46.5,46.5 0 1 1 0,93 a 46.5,46.5 0 1 1 0,-93"
+                      d="M50 3.5a46.5 46.5 0 110 93 46.5 46.5 0 110-93"
                       stroke="#555"
                       strokeWidth={7}
-                      fillOpacity={0}
-                      style={{
-                        strokeDasharray: "292.273, 292.273",
-                        strokeDashoffset: 0,
-                      }}
+                      strokeDasharray="292.273,292.273"
+                      fill="none"
                     />
                   </svg>
-                  <div class="absolute left-[50%] to-[50%] p-0  m-0 " style={{  transform: "translate(-50%, -50%)" ,color: "rgb(85, 85, 85)"}}>100</div>
+                  <div
+                    className="absolute left-[50%] top-[50%] p-0  m-0 "
+                    style={{
+                      transform: "translate(-50%, -50%)",
+                      color: "rgb(85, 85, 85)",
+                    }}
+                  >
+                    100%
+                  </div>
                 </div>
                 <h6>French</h6>
               </div>
-              <div></div>
-              <div></div>
+              <div className="w-[33.3%] text-center items-center flex flex-col">
+                <div className="relative w-[65%] mb-[15px] mr-auto mt-0 text-center flex m-auto items-center flex-col">
+                  <svg
+                    viewBox="0 0 100 100"
+                    style={{
+                      width: "100%",
+                    }}
+                    display="block"
+                  >
+                    <path
+                      d="M50 3.5a46.5 46.5 0 110 93 46.5 46.5 0 110-93"
+                      stroke="#eee"
+                      strokeWidth={7}
+                      fill="none"
+                    />
+                    <path
+                      d="M50 3.5a46.5 46.5 0 110 93 46.5 46.5 0 110-93"
+                      stroke="#555"
+                      strokeWidth={7}
+                      strokeDasharray="292.273,292.273"
+                      fill="none"
+                    />
+                  </svg>
+                  <div
+                    className="absolute left-[50%] top-[50%] p-0  m-0 "
+                    style={{
+                      transform: "translate(-50%, -50%)",
+                      color: "rgb(85, 85, 85)",
+                    }}
+                  >
+                    100%
+                  </div>
+                </div>
+                <h6>Igbo</h6>
+              </div>
+              <div className="w-[33.3%] text-center items-center flex flex-col">
+                <div className="relative w-[65%] mb-[15px] mr-auto mt-0 text-center flex m-auto items-center flex-col">
+                  <svg
+                    viewBox="0 0 100 100"
+                    style={{
+                      width: "100%",
+                    }}
+                    display="block"
+                  >
+                    <path
+                      d="M50 3.5a46.5 46.5 0 110 93 46.5 46.5 0 110-93"
+                      stroke="#eee"
+                      strokeWidth={7}
+                      fill="none"
+                    />
+                    <path
+                      d="M50 3.5a46.5 46.5 0 110 93 46.5 46.5 0 110-93"
+                      stroke="#555"
+                      strokeWidth={7}
+                      strokeDasharray="292.273,292.273"
+                      fill="none"
+                    />
+                  </svg>
+                  <div
+                    className="absolute left-[50%] top-[50%] p-0  m-0 "
+                    style={{
+                      transform: "translate(-50%, -50%)",
+                      color: "rgb(85, 85, 85)",
+                    }}
+                  >
+                    100%
+                  </div>
+                </div>
+                <h6>English</h6>
+              </div>
             </div>
             <div></div>
             <div></div>

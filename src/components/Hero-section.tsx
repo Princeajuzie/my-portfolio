@@ -3,13 +3,15 @@ import User2 from "../../public/resources/images/face.png";
 import { TypeAnimation } from 'react-type-animation';
 export function Herosection() {
   return (
-    <div className="px-8 pt-8 md:basis-[100%] max-w-[100%] w-full md:grow-0 md:shrink-0 relative">
+    <div className="px-8 pt-8 md:basis-[100%] max-w-[100%]  md:grow-0 md:shrink-0 relative w-fit">
       <div
-        className="  transition duration-550 ease-in-out bg-cover bg-center shadow-md z-50 w-full  relative "
+        className="  transition duration-550 ease-in-out bg-cover bg-center shadow-md z-50 w-full rounded-md  relative "
         style={{ backgroundImage: `url(/resources/images/bg.jpg)` }}
       >
-        <div className=" relative flex gap-11 p-20 w-[100%] rounded-md bg-gradient-to-r from-[rgba(45,45,58,0.9)] via-[rgba(45,45,58,0.7)] to-[rgba(43,43,53,0.7)] ">
-          <div className="min-w-[900px]  self-center flex flex-col gap-4">
+        <div className=" relative flex gap-11 p-20  rounded-md bg-gradient-to-r from-[rgba(45,45,58,0.9)] via-[rgba(45,45,58,0.7)] to-[rgba(43,43,53,0.7)] ">
+          <div style={{ width: `calc(100vw - 545px)` }}>
+
+          <div className="  self-center flex flex-col gap-4" >
             
             <h1 className="mb-15 text-white text-[36px]">
               Discover my Amazing <br />
@@ -33,12 +35,10 @@ export function Herosection() {
       wrapper="span"
       cursor={true}
       repeat={Infinity}
-      style={{ fontSize: '16px', display: 'inline-block', color: "#fff" }}
+      style={{ fontSize: '16px', display: 'inline-block', color: "#fff", }}
     />
               <span
-                className="txt-rotate"
-                data-period="2000"
-                data-rotate='[ "web interfaces.", "ios and android applications.", "design mocups.", "automation tools." ]'
+                
               >
                 <span className="wrap"></span>
               </span>
@@ -56,6 +56,7 @@ export function Herosection() {
                 Hire me
               </a>
             </div>
+          </div>
           </div>
           <Image
             src={User2}

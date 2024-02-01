@@ -59,11 +59,7 @@ h3 {
 }
 
 
-@media (min-width: 992px) {
-  .full-width-column {
-    width: 100%;
-  }
-}
+
 
 
 .scrollbar-track-x,

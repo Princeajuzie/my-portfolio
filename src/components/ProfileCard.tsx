@@ -5,9 +5,9 @@ import { FaGithubSquare } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { BsGlobe } from "react-icons/bs";
 import Link from "next/link";
-import { Scrollbar } from "smooth-scrollbar-react";
-import type { Scrollbar as BaseScrollbar } from "smooth-scrollbar/scrollbar";
 import { FaDownload } from "react-icons/fa6";
+import Scrollbar from 'smooth-scrollbar';
+import { useEffect } from "react";
 
 
 export function ProfileCard() {
@@ -38,6 +38,19 @@ export function ProfileCard() {
       link: "mailto:princeajuzie1@gmail.com",
     },
   ];
+
+  type OverscrollEffect = "bounce" | "otherEffect";
+
+  let options = {
+    effect: "bounce"  as OverscrollEffect,
+    damping: 0.39,
+    renderByPixel: true,
+    continuousScrolling: true,
+    alwaysShowTracks: false,
+   }
+  useEffect(() => {
+    Scrollbar.init(document.querySelector('#my-scrollbar') as HTMLElement, options);
+  }, []);
   return (
     <div className="h-screen">
       <section
@@ -69,9 +82,9 @@ export function ProfileCard() {
           </div>
 
           <div
-            className="pt-[240px] pb-[50px] pr-0 pl-0 overflow-x-auto scroll-smooth scrollbar-none scrollbar-thumb-gray-900 scrollbar-track-gray-100 "
+            className="pt-[240px] pb-[50px] pr-0 pl-0  scroll-smooth scrollbar-none  "
             style={{ height: `calc(100vh - 80px)` }}
-          >
+          id="my-scrollbar">
             <div className="py-[15px]">
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center justify-between">

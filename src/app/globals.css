@@ -54,10 +54,16 @@ h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+
   font-weight: 100;
 }
 
+
+@media (min-width: 992px) {
+  .full-width-column {
+    width: 100%;
+  }
+}
 
 
 .scrollbar-track-x,

@@ -27,7 +27,7 @@ export default function Home() {
                     <Test />
                     <Test />
                   </div>
-                <div className="flex gap-10">
+                <div className="flex ">
                   <div className="h-screen ">
                     <ProfileCard />
                     {/* <div

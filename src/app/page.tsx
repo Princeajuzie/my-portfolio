@@ -15,10 +15,11 @@ export default function Home() {
           <main
             style={{
               backgroundImage: `url(/resources/images/bg.jpg)`,
-              backgroundPosition: " center",
+              backgroundPosition: "center",
               backgroundSize: "cover",
+              height: "400px"
             }}
-            className=" w-full overflow-hidden  "
+            className=" w-full  relative  "
           >
             <section className="relative bg-gradient-to-b from-[rgba(30,30,40,0.93)] via-[rgba(30,30,40,0.96)] to-[rgba(30,30,40,0.99)]  h-screen w-full">
               <div className="h-screen">

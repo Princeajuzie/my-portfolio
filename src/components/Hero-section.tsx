@@ -1,14 +1,53 @@
-
-
+import Image from "next/image"
+import User2 from "../../public/resources/images/face.png"
 export function Herosection() {
   return (
-    <div >
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae est sequi, modi vero recusandae earum repudiandae. Tenetur omnis voluptates delectus libero recusandae? Earum perspiciatis magnam suscipit quisquam, facilis repellendus voluptatem autem accusamus recusandae molestias ea quos nisi voluptates impedit! Voluptates ipsam laboriosam harum nesciunt eaque quas necessitatibus, impedit debitis architecto nobis sed at ullam delectus nemo ipsa reiciendis aut dolore consequuntur repudiandae sint, natus consectetur laborum tenetur. Amet harum impedit, minus sequi perferendis excepturi itaque iusto dolor eveniet! Dolores ad, velit voluptatum, autem sequi quos deleniti molestiae suscipit eligendi possimus quae aspernatur. Maiores voluptatum sed facere perspiciatis, suscipit dolorem? Saepe et consectetur repellat quod dignissimos error cum eos, quis laborum ullam? Odio aut odit eos quos fugiat doloribus cupiditate ipsa corrupti at! Expedita illo quaerat fugiat voluptatibus, temporibus repellendus est non iure dolore quo perspiciatis cumque sunt hic consequatur minus, obcaecati aut natus commodi molestias architecto repudiandae, in at ad veritatis? Cumque natus, doloremque iure nostrum, officia perferendis itaque quia beatae odio ratione tenetur, alias eveniet corrupti praesentium deserunt ea provident nam dolorum magnam cupiditate exercitationem obcaecati illo autem fuga. Minima cum quibusdam, autem repudiandae voluptas, saepe labore neque distinctio pariatur debitis quasi quaerat mollitia, nesciunt accusamus adipisci repellendus illum consectetur dolore. Rerum unde excepturi autem optio nesciunt incidunt officia esse assumenda magni rem iste deleniti expedita dolor cumque aut exercitationem, fuga earum accusantium quibusdam ipsa neque. Unde perferendis doloremque eligendi odit natus provident repudiandae error, accusantium esse molestiae facilis reprehenderit labore consequuntur, eius suscipit assumenda! Culpa magni amet, natus exercitationem ipsa dignissimos pariatur. Amet neque quae tenetur nostrum quasi, dolore sit sint ducimus similique tempore officia fugiat esse deleniti voluptate voluptates necessitatibus, quibusdam nihil quia omnis ipsum quas delectus exercitationem tempora? Amet recusandae facere ipsum mollitia vitae animi illum modi ipsa adipisci voluptates harum illo officia, veritatis perspiciatis ab blanditiis ipsam necessitatibus. Similique temporibus dolores sequi voluptatem rem praesentium veniam porro! Quaerat doloribus maxime numquam rem ab, odio quos corrupti repellendus? Magnam tenetur consequatur delectus amet nam iste illo, reiciendis, ea soluta magni cumque non exercitationem ut possimus perspiciatis necessitatibus veritatis. Voluptatibus sapiente iure architecto ex beatae minima maiores deleniti, ab animi quia. Asperiores, aliquam, unde tempore nulla cum fugit harum obcaecati molestiae, porro quis animi quasi necessitatibus eius rerum provident dolor magni? Commodi adipisci cumque tempora aspernatur maiores, eveniet voluptatibus quae? Cumque doloremque minima, corrupti aperiam delectus ex quae. Repellendus ab praesentium iusto adipisci minima, cum provident ipsum obcaecati commodi odio reiciendis! Quae velit consectetur dignissimos odio, earum maiores id quisquam blanditiis, magnam assumenda ea odit ex expedita architecto ratione pariatur, doloremque iusto consequuntur. Amet ab voluptate dicta numquam id velit quisquam, doloremque similique placeat nostrum sint, autem ea magnam dolorum! Temporibus nostrum quam tempora quas dolore recusandae mollitia libero omnis corporis officiis cum obcaecati dicta explicabo, voluptatum nesciunt sapiente harum iste magni dolorem. Reprehenderit tempora inventore, culpa possimus repellendus, odit quis neque, nostrum voluptatum sunt in totam voluptatibus molestias qui animi ea quo? Tenetur quae officiis sed temporibus pariatur optio amet velit voluptates ut, nulla exercitationem dolor beatae esse architecto fugiat quis dolorum neque saepe nihil dolores labore distinctio odit magnam. Ipsa, omnis! Ipsum accusantium libero odit quibusdam, ullam temporibus blanditiis officiis iure delectus excepturi assumenda, et accusamus! Blanditiis rerum porro debitis quia dolorem officiis veniam deleniti molestias aperiam asperiores voluptas, possimus perspiciatis hic aspernatur sit voluptatibus libero ipsum ratione quae id perferendis expedita? Exercitationem, ipsum? Sunt molestias praesentium ratione eligendi quae vero eveniet voluptates delectus, maiores distinctio molestiae dignissimos libero labore id adipisci. Voluptate dolor culpa dignissimos voluptates iste accusamus nemo eaque ad velit illum, magni corrupti quisquam. Ut eum cum, ad laboriosam eos itaque omnis?</h1>
-      
+    // <div className="overflow-hidden py-0 px-[30px] relative" >
+    //   <div className=" ">
+    //     <div className="col-span-12 lg:col-span-12">
+    //       <div style={{ backgroundImage: `url(/resources/images/bg.jpg)` }} className="bg-cover bg-center relative">
+    //         <div className="absolute z-0 top-[-30px] w-90% h-30 ml-5 bg-[rgba(30,30,40,0.88)]"></div>
+
+    //         <div className="relative flex p-60 w-full bg-gradient-to-r from-[rgba(45,45,58,0.9)] via-[rgba(45,45,58,0.7)] to-[rgba(43,43,53,0.7)]">
+    //           <div className="flex">
+    //           <h1 className="mb-15">Discover my Amazing <br />Art Space!</h1>
+    //            <span>i build mobile and andriod application.</span>
+    //           </div>
+    //           <div>
+    //             <Image src={User2} height={200} width={200} alt="prince ajuzie" className="w-48 absolute right-8 bottom-0"/>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className="h-screen w-full relative">
+
+    <div className="container mx-auto">
+  <div className="row p-60-0 p-lg-30-0 p-md-15-0">
+    <div className="lg:w-full w-screen">
+      <div className=" relative transition duration-550 ease-in-out bg-cover bg-center shadow-md z-50 w-full"  style={{ backgroundImage: `url(/resources/images/bg.jpg)` }}>
+        <div className="art-banner-back"></div>
+        <div className="art-banner-dec"></div>
+        <div className="art-banner-overlay relative flex gap-11 p-16 w-full bg-gradient-to-r from-[rgba(45,45,58,0.9)] via-[rgba(45,45,58,0.7)] to-[rgba(43,43,53,0.7)]">
+          <div className="art-banner-title w-full self-center">
+            <h1 className="mb-15 text-white">Discover my Amazing <br />Art Space!</h1>
+            <div className="art-lg-text art-code mb-25">&lt;<i>code</i>&gt; I build <span className="txt-rotate" data-period="2000" data-rotate="[ &quot;web interfaces.&quot;, &quot;ios and android applications.&quot;, &quot;design mocups.&quot;, &quot;automation tools.&quot; ]"><span className="wrap"></span></span>&lt;/<i>code</i>&gt;</div>
+            <div className="art-buttons-frame">
+              <a href="#." className="art-btn art-btn-md"><span>Explore now</span></a>
+              <a href="#." className="art-link art-white-link art-w-chevron">Hire me</a>
+            </div>
+          </div>
+          <Image src={User2} height={200} width={200} alt="prince ajuzie"  className="art-banner-photo w-48 absolute right-8 bottom-0"/>
+        </div>
+      </div>
     </div>
-  )
+  </div>
+</div>
+    </div>
+
+  );
 }
 
 export default Herosection;
-
-

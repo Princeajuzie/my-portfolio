@@ -7,8 +7,37 @@ import { BsGlobe } from "react-icons/bs";
 import Link from "next/link";
 import { Scrollbar } from "smooth-scrollbar-react";
 import type { Scrollbar as BaseScrollbar } from "smooth-scrollbar/scrollbar";
+import { FaDownload } from "react-icons/fa6";
+
 
 export function ProfileCard() {
+  const Socials = [
+    {
+      name: "linkedin",
+      icon: <FaLinkedin />,
+      link: "https://www.linkedin.com/in/princeajuzie/",
+    },
+    {
+      name: "x",
+      icon: <FaSquareXTwitter />,
+      link: "https://twitter.com/Princeajuzie7",
+    },
+    {
+      name: "bio",
+      icon: <BsGlobe />,
+      link: "https://bio.link/princeaj",
+    },
+    {
+      name: "github",
+      icon: <FaGithubSquare />,
+      link: "https://github.com/Princeajuzie",
+    },
+    {
+      name: "mailto",
+      icon: <IoIosMail />,
+      link: "mailto:princeajuzie1@gmail.com",
+    },
+  ];
   return (
     <div className="h-screen">
       <section
@@ -33,14 +62,14 @@ export function ProfileCard() {
             </div>
             <div className="flex flex-col gap-2 items-center justify-center text-center">
               <h5 className="text-[#fafafc] ">Prince Ajuzie </h5>
-              <p className="text-[12px] w-36">
+              <p className="text-[12px] w-44">
                 A Software Engneer & Technical Writer{" "}
               </p>
             </div>
           </div>
 
           <div
-            className="pt-[240px] pb-[50px] pr-0 pl-0 overflow-x-auto "
+            className="pt-[240px] pb-[50px] pr-0 pl-0 overflow-x-auto scroll-smooth scrollbar-none scrollbar-thumb-gray-900 scrollbar-track-gray-100 "
             style={{ height: `calc(100vh - 80px)` }}
           >
             <div className="py-[15px]">
@@ -60,7 +89,7 @@ export function ProfileCard() {
               </ul>
             </div>
             <div className="w-full h-[1px] opacity-[0.3] bg-[#646466]"></div>
-            <div className="py-[10px] flex items-center justify-between gap-3">
+            <div className="py-[15px] flex items-center justify-between gap-3">
               <div className="w-[33.3%] text-center items-center flex flex-col">
                 <div className="relative w-[65%] mb-[15px] mr-auto mt-0 text-center flex m-auto items-center flex-col">
                   <svg
@@ -167,46 +196,29 @@ export function ProfileCard() {
                 <h6>English</h6>
               </div>
             </div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div className="w-full h-[1px] opacity-[0.3] bg-[#646466]"></div>
+            <div>
+              <Link href={'/resources/svg/cv.pdf'} className="flex items-center gap-2 mt-4 font-[600] uppercase" download="cv">
+                <h2>Download Cv</h2>
+                <FaDownload />
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div className="h-[50px] px-[35px] flex items-center gap-8 bg-gradient-to-r from-[rgba(37,37,50,0.98)] to-[rgba(35,35,45,0.98)] absolute z-[99] w-full ">
-          <Link
-            href={"https://www.linkedin.com/in/princeajuzie/"}
-            className="text-base hover:text-[#ffff] hover:ease-in-out "
-          >
-            <FaLinkedin />
-          </Link>
-          <Link
-            href={"https://twitter.com/Princeajuzie7"}
-            className="text-base hover:text-[#ffff] hover:ease-in-out "
-          >
-            <FaSquareXTwitter />
-          </Link>
-          <Link
-            href={"https://bio.link/princeaj"}
-            className="text-base hover:text-[#ffff] hover:ease-in-out "
-          >
-            <BsGlobe />
-          </Link>
-          <Link
-            href={"https://github.com/Princeajuzie"}
-            className="text-base hover:text-[#ffff] hover:ease-in-out "
-          >
-            <FaGithubSquare />
-          </Link>
-          <Link
-            href={"mailto:princeajuzie1@gmail.com"}
-            className="text-lg hover:text-[#ffff] hover:ease-in-out "
-          >
-            <IoIosMail />
-          </Link>
+        <div className="h-[50px] px-[35px] flex items-center justify-center gap-9 bg-gradient-to-r from-[rgba(37,37,50,0.98)] to-[rgba(35,35,45,0.98)] absolute z-[99] w-full">
+          {Socials.map(({ name, link, icon }) => {
+            return (
+              <Link
+                href={link}
+                target="_blank"
+                className="text-lg hover:text-[#ffff] hover:ease-in-out "
+                key={name}
+              >
+                {icon}
+              </Link>
+            );
+          })}
         </div>
       </section>
     </div>

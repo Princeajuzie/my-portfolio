@@ -39,17 +39,9 @@ export function ProfileCard() {
     },
   ];
 
-  type OverscrollEffect = "bounce" | "otherEffect";
 
-  let options = {
-    effect: "bounce"  as OverscrollEffect,
-    damping: 0.39,
-    renderByPixel: true,
-    continuousScrolling: true,
-    alwaysShowTracks: false,
-   }
   useEffect(() => {
-    Scrollbar.init(document.querySelector('#my-scrollbar') as HTMLElement, options);
+    Scrollbar.init(document.querySelector('#my-scrollbar') as HTMLElement);
   }, []);
   return (
     <div className="h-screen">

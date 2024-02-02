@@ -53,7 +53,7 @@ export function Herosection() {
               <div className="art-buttons-frame flex items-center gap-3  text-center">
                 <a
                   href="#."
-                  className="py-[15px] px-[35px] bg-[#FFC107] uppercase text-[#20202a] text-[700] mr-[15px]"
+                  className="py-[15px] px-[35px] bg-[#FFC107] rounded-md uppercase text-[#20202a] text-[700] mr-[15px]"
                 >
                   <span>Explore now</span>
                 </a>

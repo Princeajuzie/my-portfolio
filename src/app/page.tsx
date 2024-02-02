@@ -1,5 +1,5 @@
 "use client";
-import { Creteria, Herosection, ProfileCard } from "@/components";
+import { Creteria, Herosection, MyBackgroundsection, ProfileCard } from "@/components";
 import Test from "@/components/tesxt";
 import Scrollbar from "smooth-scrollbar";
 import { useEffect } from "react";
@@ -37,7 +37,7 @@ export default function Home() {
                     id="my-scrollbar1"
                   >
                     <Herosection />
-               
+                    <MyBackgroundsection />
                   </div>
                 </div>
               </div>

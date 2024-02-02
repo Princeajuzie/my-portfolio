@@ -60,6 +60,21 @@ h3 {
 
 
 
+.art-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  height: calc(100% - 10px);
+  width: 5px;
+  background: #191923;
+}
+
+.art-timeline{
+  position: relative;
+}
+
+
 
 
 .scrollbar-track-x,

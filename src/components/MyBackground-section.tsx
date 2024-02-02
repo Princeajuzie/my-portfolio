@@ -1,5 +1,5 @@
+import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
-
 export function MyBackgroundsection() {
   return (
     <div className="overflow-hidden py-0 px-[30px] relative">
@@ -35,8 +35,9 @@ export function MyBackgroundsection() {
                   laudantium ipsa ad debitis unde? Iste voluptatibus minus
                   veritatis qui ut.
                 </p>
-                <Link href={"#"}>
-                   
+                <Link href={"#"} className="flex items-center  text-[#FFC107] gap-1 uppercase font-[600] relative text-[10px]">
+                  <span>Diplome</span>
+                  <IoIosArrowForward />
                 </Link>
               </div>
             </div>

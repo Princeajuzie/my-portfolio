@@ -60,33 +60,6 @@ h3 {
 
 
 
-.art-timeline::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  right: 5px;
-  height: calc(100% - 10px);
-  width: 5px;
-  background: #191923;
-}
-
-.art-timeline{
-  position: relative;
-}
-
-
-.art-timeline-mark {
-  position: absolute;
-  top: 8px;
-  right: 0;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: solid 3px #FFC107;
-  background: #1e1e28;
-  -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
-  box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
-}
 
 
 

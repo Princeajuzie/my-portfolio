@@ -2,6 +2,7 @@ import Image from "next/image";
 import User2 from "../../public/resources/images/face.png";
 import { TypeAnimation } from "react-type-animation";
 import { IoIosArrowForward } from "react-icons/io";
+import { Creteria } from ".";
 export function Herosection() {
   return (
     <div className="lg:px-8 lg:pt-8 px-0 py-0  relative w-full">
@@ -75,6 +76,7 @@ export function Herosection() {
           />
         </div>
       </div>
+      <Creteria />
     </div>
   );
 }

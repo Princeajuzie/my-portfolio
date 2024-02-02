@@ -7,4 +7,5 @@ export * from "@/components/Works-section";
 export * from "@/components/MyBackground-section";
 export * from "@/components/Mynewsletter-section";
 export * from "@/components/Contact-section";
+export * from "@/components/Creteria-section";
 export * from "@/components/Footer-section";

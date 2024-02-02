@@ -3,7 +3,7 @@ import User2 from "../../public/resources/images/face.png";
 import { TypeAnimation } from "react-type-animation";
 export function Herosection() {
   return (
-    <div className="px-8 pt-8 md:basis-[100%] max-w-[100%]  md:grow-0 md:shrink-0 relative w-full">
+    <div className="lg:px-8 lg:pt-8 px-0 py-0  relative w-full">
       <div
         className="  transition duration-550 ease-in-out p bg-cover bg-center shadow-md z-50 w-full rounded-md  relative "
         style={{

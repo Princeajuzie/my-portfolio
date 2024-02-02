@@ -64,7 +64,7 @@ export function ProfileCard() {
               </div>
             </div>
             <div className="flex flex-col gap-2 items-center justify-center text-center">
-              <h5 className="text-[#fafafc] flex items-center text-center gap-1 text-[14px] text-[600]">
+              <h5 className="text-[#fafafc] flex items-center text-center gap-1 text-[14px] text-[800]">
                 Prince Ajuzie
                 <svg
                   width="15px"

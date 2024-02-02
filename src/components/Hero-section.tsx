@@ -13,7 +13,7 @@ export function Herosection() {
           backgroundPosition: "center",
         }}
       >
-        <div className=" relative flex gap-11 px-20 py-[60px] rounded-md bg-gradient-to-r from-[rgba(45,45,58,0.9)] via-[rgba(45,45,58,0.7)] to-[rgba(43,43,53,0.7)] ">
+        <div className=" relative flex gap-11 px-20 py-[40px] rounded-md bg-gradient-to-r from-[rgba(45,45,58,0.9)] via-[rgba(45,45,58,0.7)] to-[rgba(43,43,53,0.7)] ">
           <div className="w-full lg:w-[calc(100vw-585px)]">
             <div className="  self-center flex flex-col gap-4">
               <h1 className="mb-15 text-white text-[36px]">

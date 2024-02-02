@@ -27,8 +27,8 @@ export default function Home() {
                     <Test />
                     <Test />
                   </div>
-                <div className="flex ">
-                  <div className="h-screen ">
+                <div className="lg:flex lg:gap-10 block">
+                  <div className="h-screen lg:block  hidden">
                     <ProfileCard />
                     {/* <div
             className="pt-[240px] pb-[50px] pr-0 pl-0  scroll-smooth scrollbar-none  "

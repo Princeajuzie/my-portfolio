@@ -27,7 +27,7 @@ export default function Home() {
                   <Test />
                   <Test />
                 </div>
-                <div className="lg:flex lg:gap-10 block">
+                <div className="lg:flex  block">
                   <div className="h-screen lg:block  hidden">
                     <ProfileCard />
                   </div>

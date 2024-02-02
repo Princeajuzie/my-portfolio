@@ -5,7 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Creteria } from ".";
 export function Herosection() {
   return (
-    <div className="lg:px-8 lg:pt-8 px-0 py-0  relative w-full">
+    <div className="xl:px-8 lg:px-2 lg:pt-8 px-0 py-0  relative w-full">
       <div
         className="  transition duration-550 ease-in-out p bg-cover bg-center shadow-md z-50 w-full rounded-md  relative "
         style={{
@@ -14,7 +14,7 @@ export function Herosection() {
         }}
       >
         <div className=" relative flex gap-11 px-20 py-[40px] rounded-md bg-gradient-to-r from-[rgba(45,45,58,0.9)] via-[rgba(45,45,58,0.7)] to-[rgba(43,43,53,0.7)] ">
-          <div className="w-full lg:w-[calc(100vw-585px)]">
+          <div className="w-full lg:w-[calc(100vw-550px)]">
             <div className="  self-center flex flex-col gap-4">
               <h1 className="mb-15 text-white text-[36px]">
                 Discover my Amazing <br />

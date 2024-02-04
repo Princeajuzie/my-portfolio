@@ -1,5 +1,11 @@
 "use client";
-import { Creteria, Herosection, MyBackgroundsection, ProfileCard } from "@/components";
+import {
+  Creteria,
+  Herosection,
+  MyBackgroundsection,
+  ProfileCard,
+  Workssection,
+} from "@/components";
 import Test from "@/components/tesxt";
 import Scrollbar from "smooth-scrollbar";
 import { useEffect } from "react";
@@ -19,7 +25,7 @@ export default function Home() {
               backgroundSize: "cover",
               height: "400px",
             }}
-            className=" w-full  relative  "
+            className=" w-full  relative"
           >
             <section className="relative bg-gradient-to-b from-[rgba(30,30,40,0.93)] via-[rgba(30,30,40,0.96)] to-[rgba(30,30,40,0.99)]  h-screen w-full">
               <div className="h-screen">
@@ -38,6 +44,7 @@ export default function Home() {
                   >
                     <Herosection />
                     <MyBackgroundsection />
+                    <Workssection />
                   </div>
                 </div>
               </div>

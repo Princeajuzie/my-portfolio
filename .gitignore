@@ -31,7 +31,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-/ratekey
+ratekey.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -4,6 +4,7 @@ import {
   Herosection,
   MyBackgroundsection,
   ProfileCard,
+  Ratingsection,
   Workssection,
 } from "@/components";
 import Test from "@/components/tesxt";
@@ -45,6 +46,7 @@ export default function Home() {
                     <Herosection />
                     <MyBackgroundsection />
                     <Workssection />
+                    <Ratingsection />
                   </div>
                 </div>
               </div>

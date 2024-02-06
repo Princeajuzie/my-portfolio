@@ -2,11 +2,11 @@ import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 export function MyBackgroundsection() {
   return (
-    <div className="overflow-hidden py-0 md:px-[30px] px-[20px] relative">
+    <div className="overflow-hidden py-0 md:px-[30px] px-[10px] relative pt-[20px]">
       <div className="flex  gap-[20px] flex-col md:flex-row">
         <div className="lg:w-1/2 flex-grow-0 flex-shrink-0 flex-basis-1/2 max-w-[100%] md:max-w-[50%]">
           <div className="self-center relative mb-[30px]">
-            <h4 className="text-[14px] text-[600] text-[#fafafc]">Education</h4>
+            <h4 className="text-[14px] text-[600] text-[#fafafc] text-center lg:text-start font-[700]">Education</h4>
           </div>
 
           <div className="relative before:content-[''] before:absolute before:top-[10px] before:h-[calc(100%-10px)] before:bg-[#191923] before:right-[5px] before:w-[5px]">
@@ -76,7 +76,7 @@ export function MyBackgroundsection() {
         </div>
         <div className="lg:w-1/2 flex-grow-0 flex-shrink-0 flex-basis-1/2 max-w-[100%] md:max-w-[50%]">
           <div className="self-center relative mb-[30px]">
-            <h4 className="text-[14px] text-[600] text-[#fafafc]">Work Experience</h4>
+            <h4 className="text-[14px] text-[600] text-[#fafafc] text-center lg:text-start font-[700]">Work Experience</h4>
           </div>
 
           <div className="relative before:content-[''] before:absolute before:top-[10px] before:h-[calc(100%-10px)] before:bg-[#191923] before:right-[5px] before:w-[5px]">

@@ -7,9 +7,6 @@ import { Scrollbar } from "smooth-scrollbar-react";
 type OverscrollEffect = "bounce" | any;
  const Test = () => {
 
-
-
-
   
   return (
     <div className="App">

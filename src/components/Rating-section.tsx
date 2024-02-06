@@ -1,13 +1,31 @@
+"use client"
 import Head from 'next/head'
 import Image from 'next/image'
-
+import Axiosrequest from '@/utils/Axiosrequest';
+import { useEffect } from 'react';
 export  function Ratingsection({sheetdata} : any) {
 // Sort results by id in descending order, take two
 // and return the age as an integer.
 
-fetch('https://sheetdb.io/api/v1/105rynq2fk86g')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+const HandlefetchRate = async ()=>{
+  try {
+    
+    const res = await  Axiosrequest.get(`${process.env.NEXT_PUBLIC_RATESHEET}`)
+    if(res.status === 200){
+    console.log(res.data)
+
+    }
+    console.log(res.status)
+  } catch (error) {
+    
+  }
+
+
+
+}
+useEffect(()=>{
+  HandlefetchRate()
+})
 
   return (
     <div >
@@ -18,8 +36,8 @@ fetch('https://sheetdb.io/api/v1/105rynq2fk86g')
       </Head>
 
       <main >
-        <h1>
           <h1>hello world</h1>
+        <h1>
           {sheetdata}
         </h1>
       </main>

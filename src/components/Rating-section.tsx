@@ -46,14 +46,3 @@ useEffect(()=>{
 }
 
 export default Ratingsection
-
-export async function getServerSideProps() {
-  const req = await fetch('http://localhost:3000/utils/ratesheet');
-  const res = await req.json();
-
-  return {
-    props: {
-      sheetdata: res.data
-    }
-  }
-}

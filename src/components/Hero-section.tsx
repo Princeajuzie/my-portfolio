@@ -2,6 +2,7 @@ import Image from "next/image";
 import User2 from "../../public/resources/images/face.svg";
 import { TypeAnimation } from "react-type-animation";
 import { IoIosArrowForward } from "react-icons/io";
+
 export function Herosection() {
   return (
     <div className="xl:px-8 lg:px-2 lg:pt-8 px-[10px] py-0  relative w-full ">
@@ -74,7 +75,9 @@ export function Herosection() {
             className="art-banner-photo h-auto   lg:w-[320px] lg:block hidden  right-8 bottom-0 absolute"
           />
         </div>
+     
       </div>
+
     </div>
   );
 }

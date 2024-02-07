@@ -47,8 +47,11 @@ export default function Home() {
                   >
                     <Herosection />
                     <MyBackgroundsection />
-                    <Workssection />
+                    {/* <Workssection /> */}
+                    <div className=" ">
+
                     <Ratingsection />
+                    </div>
                   </div>
                 </div>
               </div>

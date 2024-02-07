@@ -1,5 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
+import { Ratingsection } from ".";
 export function MyBackgroundsection() {
   return (
     <div className="overflow-hidden py-0 md:px-[30px] px-[10px] relative pt-[20px]">
@@ -144,8 +145,10 @@ export function MyBackgroundsection() {
             </div>
           </div>
         </div>
+   
       
       </div>
+      
     </div>
   );
 }

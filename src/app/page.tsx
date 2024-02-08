@@ -12,9 +12,9 @@ import Scrollbar from "smooth-scrollbar";
 import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    Scrollbar.init(document.querySelector("#my-scrollbar1") as HTMLElement);
-  }, []);
+  // useEffect(() => {
+  //   Scrollbar.init(document.querySelector("#my-scrollbar1") as HTMLElement);
+  // }, []);
   return (
     <div className=" lg:p-[15px] p-0 bg-[#191923] h-screen w-[100vw] top-0 relative overflow-hidden">
       <div className="fixed z-[99] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block"> 
@@ -42,15 +42,15 @@ export default function Home() {
                     <ProfileCard />
                   </div>
                   <div
-                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)] overflow-y-scroll"
-                    // id="my-scrollbar1"
+                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)]"
+                    id="my-scrollbar1"
                   >
                     <Herosection />
                     <MyBackgroundsection />
                     {/* <Workssection /> */}
                     <div className=" ">
 
-                    {/* <Ratingsection /> */}
+                    <Ratingsection />
                     </div>
                   </div>
                 </div>

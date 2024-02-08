@@ -1,3 +1,4 @@
+"use client";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import { Ratingsection } from ".";

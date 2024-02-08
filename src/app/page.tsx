@@ -50,7 +50,7 @@ export default function Home() {
                     {/* <Workssection /> */}
                     <div className=" ">
 
-                    <Ratingsection />
+                    {/* <Ratingsection /> */}
                     </div>
                   </div>
                 </div>

@@ -34,15 +34,15 @@ export default function Home() {
             <section className="relative bg-gradient-to-b from-[rgba(30,30,40,0.93)] via-[rgba(30,30,40,0.96)] to-[rgba(30,30,40,0.99)]  h-screen w-full">
               <div className="h-screen">
                 <div className="hidden">
-                  <Test />
-                  <Test />
+                  {/* <Test />
+                  <Test /> */}
                 </div>
                 <div className="lg:flex  block">
                   <div className="h-screen lg:block  hidden">
                     <ProfileCard />
                   </div>
                   <div
-                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)]"
+                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)] overflow-scroll"
                     id="my-scrollbar1"
                   >
                     <Herosection />

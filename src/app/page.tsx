@@ -42,8 +42,8 @@ export default function Home() {
                     <ProfileCard />
                   </div>
                   <div
-                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)]"
-                    id="my-scrollbar1"
+                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)] overflow-y-auto"
+                    // id="my-scrollbar1"
                   >
                     <Herosection />
                     <MyBackgroundsection />

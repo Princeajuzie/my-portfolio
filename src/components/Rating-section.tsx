@@ -3,9 +3,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Axiosrequest from "@/utils/Axiosrequest";
 import React, { useRef, useState, useEffect } from "react";
-import { Virtual, Navigation, Pagination } from "swiper/modules";
+import { Virtual, Navigation, Pagination, Autoplay } from "swiper/modules";
 import SwiperCore from "swiper/core";
-import {  FaChevronLeft,  FaChevronRight} from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "swiper/swiper-bundle.css";
 
 import { FaStar } from "react-icons/fa";
@@ -22,7 +22,6 @@ export function Ratingsection({ sheetdata }: any) {
   const [slides, setSlides] = useState(
     Array.from({ length: 5 }).map((_, index) => `Slide ${index + 1}`)
   );
-
 
   const swiperRef = useRef<any>(null);
   const [isBeginning, setIsBeginning] = useState(true);
@@ -46,10 +45,6 @@ export function Ratingsection({ sheetdata }: any) {
       setIsEnd(swiperRef.current.swiper.isEnd);
     }
   };
-
-
-
-
 
   const HandlefetchRate = async () => {
     try {
@@ -101,8 +96,12 @@ export function Ratingsection({ sheetdata }: any) {
 
           <div className=" w-full  ">
             <Swiper
-              modules={[Virtual, Navigation, Pagination]}
-         
+              modules={[Virtual, Navigation, Pagination, Autoplay]}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              speed={1400}
               spaceBetween={20}
               slidesPerView={1}
               ref={swiperRef}
@@ -187,73 +186,75 @@ export function Ratingsection({ sheetdata }: any) {
           </div>
 
           <div className="">
-  {/* slider navigation */}
-  <div className="pt-[15px] flex justify-between">
-    {/* left side */}
-    <div className="art-sn-left">
-      {/* slider pagination */}
-      <div className="absolute text-center transition-opacity duration-300 transform translate-x-0 translate-y-0 translate-z-0">
-        <span
-          className="mr-[10px] bg-[#8c8c8e] opacity-[0.5] h-[4px]"
-          tabIndex={0}
-          role="button"
-          aria-label="Go to slide 1"
-        />
-        <span
-          className="w-[20px] bg-[#FFC107]"
-          tabIndex={0}
-          role="button"
-          aria-label="Go to slide 2"
-        />
-        <span
-          className="mr-[10px] bg-[#8c8c8e] opacitiy-[0.5] h-[4px]"
-          tabIndex={0}
-          role="button"
-          aria-label="Go to slide 3"
-        />
-      </div>
-    </div>
-    {/* left side end */}
-    {/* right side */}
-    <div className="art-sn-right">
-      {/* slider navigation */}
-      <div className="flex gap-2">
-        {/* prev */}
-        <div
-                           className={`art-slider-nav art-testi-swiper-prev ${
-                            isBeginning ?'text-[#35353D] cursor-not-allowed' : 'cursor-pointer'
-                          }`}
-        
-          onClick={handlePrevSlide}
-          tabIndex={0}
-          role="button"
-          aria-label="Previous slide"
-          aria-disabled={isBeginning}
-        >
-          <FaChevronLeft />
-          <i className="fas fa-chevron-left" />
-        </div>
-        {/* next */}
-        <div
-           className={`art-slider-nav art-testi-swiper-next ${
-            isEnd ? 'text-[#35353D] cursor-not-allowed' : 'cursor-pointer'
-          }`}
-          tabIndex={0}
-                  role="button"
-                  aria-label="Next slide"
-                  aria-disabled={isEnd}
-                  onClick={handleNextSlide}
-        >
-          <FaChevronRight />
-        </div>
-      </div>
-      {/* slider navigation */}
-    </div>
-    {/* right side end */}
-  </div>
-  {/* slider navigation end */}
-</div>
-
+            {/* slider navigation */}
+            <div className="pt-[15px] flex justify-between">
+              {/* left side */}
+              <div className="art-sn-left">
+                {/* slider pagination */}
+                <div className="absolute text-center transition-opacity duration-300 transform translate-x-0 translate-y-0 translate-z-0">
+                  <span
+                    className="mr-[10px] bg-[#8c8c8e] opacity-[0.5] h-[4px]"
+                    tabIndex={0}
+                    role="button"
+                    aria-label="Go to slide 1"
+                  />
+                  <span
+                    className="w-[20px] bg-[#FFC107]"
+                    tabIndex={0}
+                    role="button"
+                    aria-label="Go to slide 2"
+                  />
+                  <span
+                    className="mr-[10px] bg-[#8c8c8e] opacitiy-[0.5] h-[4px]"
+                    tabIndex={0}
+                    role="button"
+                    aria-label="Go to slide 3"
+                  />
+                </div>
+              </div>
+              {/* left side end */}
+              {/* right side */}
+              <div className="art-sn-right">
+                {/* slider navigation */}
+                <div className="flex gap-2">
+                  {/* prev */}
+                  <div
+                    className={`art-slider-nav art-testi-swiper-prev ${
+                      isBeginning
+                        ? "text-[#35353D] cursor-not-allowed"
+                        : "cursor-pointer"
+                    }`}
+                    onClick={handlePrevSlide}
+                    tabIndex={0}
+                    role="button"
+                    aria-label="Previous slide"
+                    aria-disabled={isBeginning}
+                  >
+                    <FaChevronLeft />
+                    <i className="fas fa-chevron-left" />
+                  </div>
+                  {/* next */}
+                  <div
+                    className={`art-slider-nav art-testi-swiper-next ${
+                      isEnd
+                        ? "text-[#35353D] cursor-not-allowed"
+                        : "cursor-pointer"
+                    }`}
+                    tabIndex={0}
+                    role="button"
+                    aria-label="Next slide"
+                    aria-disabled={isEnd}
+                    onClick={handleNextSlide}
+                  >
+                    <FaChevronRight />
+                  </div>
+                </div>
+                {/* slider navigation */}
+              </div>
+              {/* right side end */}
+            </div>
+            {/* slider navigation end */}
+          </div>
         </div>
       </div>
     </>

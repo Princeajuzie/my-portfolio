@@ -1,5 +1,6 @@
 import Isotope from "isotope-layout";
 import React from "react";
+import dynamic from "next/dynamic"
 export function Workssection() {
   const isotope = React.useRef<Isotope | null>();
   // store the filter keyword in a state

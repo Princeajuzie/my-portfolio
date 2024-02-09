@@ -36,8 +36,8 @@ export default function Home() {
             <section className="relative bg-gradient-to-b from-[rgba(30,30,40,0.93)] via-[rgba(30,30,40,0.96)] to-[rgba(30,30,40,0.99)]  h-screen w-full">
               <div className="h-screen">
                 <div className="hidden">
-                  {/* <Test />
-                  <Test /> */}
+                  <Test />
+                  <Test />
                 </div>
                 <div className="lg:flex  block">
                   <div className="h-screen lg:block  hidden">
@@ -49,10 +49,11 @@ export default function Home() {
                   >
                     <Herosection />
                     <MyBackgroundsection />
-                    {/* <Workssection /> */}
+                  
                     <div className=" ">
 
                     <Ratingsection />
+                      <Workssection />
                    <Contactsection />
                    <div className="lg:px-8 px-2"> 
 

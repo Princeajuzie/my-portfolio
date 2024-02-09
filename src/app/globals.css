@@ -25,7 +25,10 @@ body {
   font-weight: 300;
   letter-spacing: 0.5px;
   font-size: 12px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
+
 
 .App {
   width: 500px;
@@ -96,6 +99,7 @@ body {
 
   /* background-color: green; */
 }
+
 
 /* 
 .swiper-slide {

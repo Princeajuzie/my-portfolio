@@ -5,6 +5,7 @@ import Axiosrequest from "@/utils/Axiosrequest";
 import React, { useRef, useState, useEffect } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import SwiperCore from "swiper/core";
+import {  FaChevronLeft,  FaChevronRight} from "react-icons/fa";
 import "swiper/swiper-bundle.css";
 
 import { FaStar } from "react-icons/fa";
@@ -65,7 +66,7 @@ export function Ratingsection({ sheetdata }: any) {
     <>
       <div className="  w-full lg:px-8 px-2">
         <div>
-          <h4 className="text-[17px] font-[600] text-white mb-[30px]">
+          <h4 className="text-[17px] font-[600] text-white mb-[30px] lg:text-start text-center">
             Recommendations
           </h4>
         </div>
@@ -96,15 +97,19 @@ export function Ratingsection({ sheetdata }: any) {
 
           <div className=" w-full  ">
             <Swiper
+              modules={[Virtual, Navigation, Pagination]}
+              onSwiper={setSwiperRef}
               spaceBetween={20}
               slidesPerView={1}
+              navigation={true}
+              virtual
               breakpoints={{
                 768: {
                   slidesPerView: 2,
                 },
               }}
               // navigation
-              pagination={{ clickable: true }}
+              // pagination={{ clickable: true }}
               className=" py-6"
             >
               {/* testimonial */}
@@ -196,7 +201,7 @@ export function Ratingsection({ sheetdata }: any) {
           aria-label="Go to slide 2"
         />
         <span
-          className="swiper-pagination-bullet"
+          className="mr-[10px] bg-[#8c8c8e] opacitiy-[0.5] h-[4px]"
           tabIndex={0}
           role="button"
           aria-label="Go to slide 3"
@@ -207,7 +212,7 @@ export function Ratingsection({ sheetdata }: any) {
     {/* right side */}
     <div className="art-sn-right">
       {/* slider navigation */}
-      <div className="art-slider-nav-frame">
+      <div className="flex gap-2">
         {/* prev */}
         <div
           className="art-slider-nav art-testi-swiper-prev"
@@ -216,17 +221,19 @@ export function Ratingsection({ sheetdata }: any) {
           aria-label="Previous slide"
           aria-disabled="false"
         >
+          <FaChevronLeft />
           <i className="fas fa-chevron-left" />
         </div>
         {/* next */}
         <div
+        onClick={prepend}
           className="art-slider-nav art-testi-swiper-next"
           tabIndex={0}
           role="button"
           aria-label="Next slide"
           aria-disabled="false"
         >
-          <i className="fas fa-chevron-right" />
+          <FaChevronRight />
         </div>
       </div>
       {/* slider navigation */}

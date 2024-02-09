@@ -8,8 +8,8 @@
 /* Courier Prime Font */
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-
-::after, ::before {
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,15 +27,12 @@ body {
   font-size: 12px;
 }
 
-
-
 .App {
   width: 500px;
   max-width: 90vw;
   margin: 20px auto 0;
   height: 1500px;
 }
-
 
 .swiper {
   width: 100%;
@@ -50,7 +47,7 @@ body {
   padding-block: 20px;
 
   /* Center slide text vertically */
-width: 200px;
+  width: 200px;
 }
 
 /* .swiper-slide img {
@@ -67,17 +64,24 @@ width: 200px;
   max-width: 900px;
   margin: 20px auto;
   padding-inline: 20px;
-
-  
 }
 
+.inputfocus:focus + label {
+  background: #ffc107;
+  color: #20202a;
+  transition: 0.4s ease-in-out;
+}
 
-
+.artinput {
+  position: relative;
+  margin-bottom: 30px;
+  transition: 0.4s ease-in-out;
+}
 
 .swiper-wrapper {
   position: relative;
   width: fit-content;
- 
+  transform: translate3d(-394px, 0px, 0px); transition-duration: 0ms;
   height: 100%;
   z-index: 1;
   display: -webkit-box;
@@ -89,7 +93,6 @@ width: 200px;
   transition-property: transform, -webkit-transform;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-
 
   /* background-color: green; */
 }
@@ -107,11 +110,6 @@ width: 200px;
   transition-property: transform, -webkit-transform
 } */
 
-
-
-
-
-
 .scrollbar-track-x,
 .scrollbar-thumb-x {
   height: 5px !important;
@@ -119,7 +117,7 @@ width: 200px;
 }
 
 .scrollbar-track-y,
-.scrollbar-thumb-y :hover{
+.scrollbar-thumb-y :hover {
   opacity: 0;
   display: none !important;
 }
@@ -130,6 +128,3 @@ width: 200px;
   opacity: 0;
   display: none !important;
 }
-
-
-

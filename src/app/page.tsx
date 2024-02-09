@@ -6,15 +6,17 @@ import {
   ProfileCard,
   Ratingsection,
   Workssection,
+  Contactsection,
+  Footersection
 } from "@/components";
 import Test from "@/components/tesxt";
 import Scrollbar from "smooth-scrollbar";
 import { useEffect } from "react";
 
 export default function Home() {
-  // useEffect(() => {
-  //   Scrollbar.init(document.querySelector("#my-scrollbar1") as HTMLElement);
-  // }, []);
+  useEffect(() => {
+    Scrollbar.init(document.querySelector("#my-scrollbar1") as HTMLElement);
+  }, []);
   return (
     <div className=" lg:p-[15px] p-0 bg-[#191923] h-screen w-[100vw] top-0 relative overflow-hidden">
       <div className="fixed z-[99] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block"> 
@@ -34,16 +36,16 @@ export default function Home() {
             <section className="relative bg-gradient-to-b from-[rgba(30,30,40,0.93)] via-[rgba(30,30,40,0.96)] to-[rgba(30,30,40,0.99)]  h-screen w-full">
               <div className="h-screen">
                 <div className="hidden">
-                  {/* <Test />
-                  <Test /> */}
+                  <Test />
+                  <Test />
                 </div>
                 <div className="lg:flex  block">
                   <div className="h-screen lg:block  hidden">
                     <ProfileCard />
                   </div>
                   <div
-                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)] overflow-y-auto"
-                    // id="my-scrollbar1"
+                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)]"
+                    id="my-scrollbar1"
                   >
                     <Herosection />
                     <MyBackgroundsection />
@@ -51,6 +53,11 @@ export default function Home() {
                     <div className=" ">
 
                     <Ratingsection />
+                   <Contactsection />
+                   <div className="px-8"> 
+
+                   <Footersection />
+                   </div>
                     </div>
                   </div>
                 </div>

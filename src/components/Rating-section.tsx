@@ -70,30 +70,6 @@ export function Ratingsection({ sheetdata }: any) {
           </h4>
         </div>
         <div className="  ">
-          {/* <Swiper
-        modules={[Virtual, Navigation, Pagination]}
-        onSwiper={setSwiperRef}
-        slidesPerView={1}
-        centeredSlides={true}
-        spaceBetween={10}
-     
-       breakpoints={{
-        768:{
-          slidesPerView: 0,
-          spaceBetween:8
-        }
-       }}
-
-        navigation={true}
-        virtual
-      >
-        {slides.map((slideContent, index) => (
-          <SwiperSlide key={slideContent} virtualIndex={index} className="w-[377px] ">
-            {slideContent}
-          </SwiperSlide>
-        ))}
-      </Swiper> */}
-
           <div className=" w-full  ">
             <Swiper
               modules={[Virtual, Navigation, Pagination, Autoplay]}
@@ -112,8 +88,6 @@ export function Ratingsection({ sheetdata }: any) {
                   slidesPerView: 2,
                 },
               }}
-              // navigation
-              // pagination={{ clickable: true }}
               className=" py-6"
             >
               {/* testimonial */}
@@ -179,10 +153,6 @@ export function Ratingsection({ sheetdata }: any) {
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* testimonial end */}
-
-            {/* Add more SwiperSlides for additional testimonials */}
           </div>
 
           <div className="">

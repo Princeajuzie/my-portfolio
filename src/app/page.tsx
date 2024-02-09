@@ -7,7 +7,8 @@ import {
   Ratingsection,
   Workssection,
   Contactsection,
-  Footersection
+  Footersection,
+  Mynewslettersection
 } from "@/components";
 import Test from "@/components/tesxt";
 import Scrollbar from "smooth-scrollbar";
@@ -54,6 +55,7 @@ export default function Home() {
 
                     <Ratingsection />
                       <Workssection />
+                      <Mynewslettersection />
                    <Contactsection />
                    <div className="lg:px-8 px-2"> 
 

@@ -5,14 +5,14 @@ export function Workssection() {
   // store the filter keyword in a state
   const [filterKey, setFilterKey] = React.useState("*");
 
-  // React.useEffect(() => {
-  //   isotope.current = new Isotope(".filter-container", {
-  //     itemSelector: ".filter-item",
-  //     layoutMode: "fitRows"
-  //   });
-  //   // cleanup
-  //   return () => isotope?.current?.destroy();
-  // }, []);
+  React.useEffect(() => {
+    isotope.current = new Isotope(".filter-container", {
+      itemSelector: ".filter-item",
+      layoutMode: "fitRows"
+    });
+    // cleanup
+    return () => isotope?.current?.destroy();
+  }, []);
 
   React.useEffect(() => {
     if (filterKey === "*") isotope.current?.arrange({ filter: `*` });
@@ -32,28 +32,40 @@ export function Workssection() {
             <div className="lg:w-max  ">
               <div className="flex flex-row  items-center justify-center">
                 {/* filter link */}
-                <a href="#" data-filter="*" className="relative uppercase text-[12px] inline-block mr-[15px] text-[#8c8c8e] font-[600] transition ease-in-out hover:text-white hover:text-shadow">
+                <a href="#" onClick={handleFilterKeyChange("*")} className="relative uppercase text-[12px] inline-block mr-[15px] text-[#8c8c8e] font-[600] transition ease-in-out hover:text-white hover:text-shadow">
                   All Categories
                 </a>
                 {/* filter link */}
-                <a href="#" data-filter=".webTemplates" className="relative uppercase text-[12px] inline-block mr-[15px] text-[#8c8c8e] font-[600] transition ease-in-out hover:text-white hover:text-shadow">
+                <a href="#"  onClick={handleFilterKeyChange("web")} className="relative uppercase text-[12px] inline-block mr-[15px] text-[#8c8c8e] font-[600] transition ease-in-out hover:text-white hover:text-shadow">
                   Web 
                 </a>
                 {/* filter link */}
                 <a
                   href="#"
-                  data-filter=".logos"
+                  onClick={handleFilterKeyChange("server")}
                   className="relative uppercase text-[12px] inline-block mr-[15px] text-[#8c8c8e] font-[600] transition ease-in-out hover:text-white hover:text-shadow"
                 >
                   Server
                 </a>
                 {/* filter link */}
-                <a href="#" data-filter=".drawings" className="relative uppercase text-[12px] inline-block mr-[15px] text-[#8c8c8e] font-[600] transition ease-in-out hover:text-white hover:text-shadow">
+                <a href="#" data-filter=".drawings" onClick={handleFilterKeyChange("app")} className="relative uppercase text-[12px] inline-block mr-[15px] text-[#8c8c8e] font-[600] transition ease-in-out hover:text-white hover:text-shadow">
                   App
                 </a>
               </div>
             </div>
           </div>
+        </div>
+        <div className="filter-container">
+        <div className="filter-item app">
+          <span>app</span>
+        </div>
+        <div className="filter-item web">
+          <span>web</span>
+        </div>
+        <div className="filter-item server">
+          <span>server</span>
+        </div>
+    
         </div>
       </div>
     </div>

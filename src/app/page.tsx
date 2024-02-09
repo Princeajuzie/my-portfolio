@@ -54,7 +54,7 @@ export default function Home() {
 
                     <Ratingsection />
                    <Contactsection />
-                   <div className="px-8"> 
+                   <div className="lg:px-8 px-2"> 
 
                    <Footersection />
                    </div>

@@ -15,37 +15,41 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // // Install Swiper modules\
 
 export function Ratingsection({ sheetdata }: any) {
-  const [swiperRef, setSwiperRef] = useState<SwiperCore>();
   const appendNumber = useRef(500);
   const prependNumber = useRef(1);
   // Create array with 500 slides
 
   const [slides, setSlides] = useState(
-    Array.from({ length: 500 }).map((_, index) => `Slide ${index + 1}`)
+    Array.from({ length: 5 }).map((_, index) => `Slide ${index + 1}`)
   );
 
-  const prepend = () => {
-    setSlides([
-      `Slide ${prependNumber.current - 2}`,
-      `Slide ${prependNumber.current - 1}`,
-      ...slides,
-    ]);
-    prependNumber.current = prependNumber.current - 2;
-    if (swiperRef) {
-      swiperRef.slideTo(swiperRef.activeIndex + 2, 0);
+
+  const swiperRef = useRef<any>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const handlePrevSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
     }
   };
 
-  const append = () => {
-    setSlides([...slides, "Slide " + ++appendNumber.current]);
-  };
-
-  const slideTo = (index: number) => {
-    if (swiperRef) {
-      swiperRef.slideTo(index, 0);
-      swiperRef.slideTo(index - 1, 0);
+  const handleNextSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
     }
   };
+
+  const updateNavigationButtons = () => {
+    if (swiperRef.current) {
+      setIsBeginning(swiperRef.current.swiper.isBeginning);
+      setIsEnd(swiperRef.current.swiper.isEnd);
+    }
+  };
+
+
+
+
 
   const HandlefetchRate = async () => {
     try {
@@ -98,10 +102,11 @@ export function Ratingsection({ sheetdata }: any) {
           <div className=" w-full  ">
             <Swiper
               modules={[Virtual, Navigation, Pagination]}
-              onSwiper={setSwiperRef}
+         
               spaceBetween={20}
               slidesPerView={1}
-              navigation={true}
+              ref={swiperRef}
+              onSlideChange={updateNavigationButtons}
               virtual
               breakpoints={{
                 768: {
@@ -215,23 +220,29 @@ export function Ratingsection({ sheetdata }: any) {
       <div className="flex gap-2">
         {/* prev */}
         <div
-          className="art-slider-nav art-testi-swiper-prev"
+                           className={`art-slider-nav art-testi-swiper-prev ${
+                            isBeginning ?'text-[#35353D] cursor-not-allowed' : 'cursor-pointer'
+                          }`}
+        
+          onClick={handlePrevSlide}
           tabIndex={0}
           role="button"
           aria-label="Previous slide"
-          aria-disabled="false"
+          aria-disabled={isBeginning}
         >
           <FaChevronLeft />
           <i className="fas fa-chevron-left" />
         </div>
         {/* next */}
         <div
-        onClick={prepend}
-          className="art-slider-nav art-testi-swiper-next"
+           className={`art-slider-nav art-testi-swiper-next ${
+            isEnd ? 'text-[#35353D] cursor-not-allowed' : 'cursor-pointer'
+          }`}
           tabIndex={0}
-          role="button"
-          aria-label="Next slide"
-          aria-disabled="false"
+                  role="button"
+                  aria-label="Next slide"
+                  aria-disabled={isEnd}
+                  onClick={handleNextSlide}
         >
           <FaChevronRight />
         </div>

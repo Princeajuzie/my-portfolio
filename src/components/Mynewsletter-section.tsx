@@ -76,19 +76,21 @@ export function Mynewslettersection({ sheetdata }: any) {
             <Swiper
               modules={[Virtual, Navigation, Pagination, Autoplay]}
               autoplay={{
-                delay: 5000,
+                delay: 1000,
                 disableOnInteraction: false,
               }}
               speed={1400}
-              spaceBetween={30}
+              spaceBetween={20}
               slidesPerView={1}
               ref={swiperRef}
               onSlideChange={updateNavigationButtons}
               virtual
               breakpoints={{
-                768: {
+                1080: {
                   slidesPerView: 3,
+                  spaceBetween: 10,
                 },
+             
               }}
               className=" py-6"
             >
@@ -100,7 +102,7 @@ export function Mynewslettersection({ sheetdata }: any) {
                   className=" "
                 >
                   <div
-                    className="lg:w-[280px] w-[633px] mr-[30px]"
+                    className="lg:w-[280px] w-full mr-[30px]"
                  
                   >
                     {/* blog post card */}

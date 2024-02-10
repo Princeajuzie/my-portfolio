@@ -54,7 +54,10 @@ export default function Home() {
                     <div className=" ">
 
                     <Ratingsection />
+                    <div className="h-max relative">
+
                       <Workssection />
+                    </div>
                       <Mynewslettersection />
                    <Contactsection />
                    <div className="lg:px-8 px-2"> 

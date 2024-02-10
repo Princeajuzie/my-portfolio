@@ -101,6 +101,13 @@ body {
 }
 
 
+.filter-container{
+  position: relative;
+  height: auto !important; 
+}
+.filter-item{
+  position: unset !important;
+}
 /* 
 .swiper-slide {
   -ms-flex-negative: 0;

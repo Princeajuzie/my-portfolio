@@ -69,7 +69,7 @@ export function Workssection() {
             </div>
           </div>
         </div>
-        <ul className="filter-container flex flex-row gap-3  justify-center mx-auto">
+        <ul className="filter-container flex flex-row gap-3  justify-center mx-auto" style={{ position: "relative", height: "auto" }}>
           {/* Map over content array and render items */}
       
           <li className="bg-[#2C2C37] w-full h-auto p-[10px]">

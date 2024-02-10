@@ -14,9 +14,9 @@ export function Workssection() {
         itemSelector: ".filter-item",
         layoutMode: "fitRows"
       });
+      return () => isotope.current?.destroy()
     }
     // cleanup
-    // return () => typeof window !== "undefined"?isotope.current?.destroy() : void 0;
   }, []);
 
   React.useEffect(() => {

@@ -8,21 +8,15 @@ export function Workssection() {
   const [filterKey, setFilterKey] = React.useState("*");
 
   React.useEffect(() => {
-    let cleanupFunction = () => {}; // Define an empty cleanup function by default
-  
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && window.document) {
       isotope.current = new Isotope(".filter-container", {
         itemSelector: ".filter-item",
         layoutMode: "fitRows"
       });
-  
-      // Define the cleanup function
-      cleanupFunction = () => isotope.current?.destroy();
+      return () => isotope.current?.destroy();
     }
-  
-    // Return the cleanup function
-    return cleanupFunction;
   }, []);
+  
   
   React.useEffect(() => {
     if (filterKey === "*") isotope.current?.arrange({ filter: `*` });

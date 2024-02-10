@@ -3,9 +3,9 @@ import Isotope from "isotope-layout";
 import React from "react";
 import dynamic from "next/dynamic"
 export function Workssection() {
-  // const isotope = React.useRef<Isotope | null>();
+  const isotope = React.useRef<Isotope | null>();
   // // store the filter keyword in a state
-  // const [filterKey, setFilterKey] = React.useState("*");
+  const [filterKey, setFilterKey] = React.useState("*");
 
   // React.useEffect(() => {
   //   isotope.current = new Isotope(".filter-container", {
@@ -16,12 +16,12 @@ export function Workssection() {
   //   return () => isotope?.current?.destroy();
   // }, []);
 
-  // React.useEffect(() => {
-  //   if (filterKey === "*") isotope.current?.arrange({ filter: `*` });
-  //   else isotope.current?.arrange({ filter: `.${filterKey}` });
-  // }, [filterKey]);
+  React.useEffect(() => {
+    if (filterKey === "*") isotope.current?.arrange({ filter: `*` });
+    else isotope.current?.arrange({ filter: `.${filterKey}` });
+  }, [filterKey]);
 
-  // const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
+  const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
   return (
     // <div className="pt-[30px] pb-0">
     //   <div className="pt-0 basis-full max-w-full">

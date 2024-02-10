@@ -9,10 +9,13 @@ export function Workssection() {
 
   React.useEffect(() => {
     if (typeof window !== "undefined" && window.document) {
-      // isotope.current = new Isotope(".filter-container", {
-      //   itemSelector: ".filter-item",
-      //   layoutMode: "fitRows"
-      // });
+      if(!isotope.current){
+
+        isotope.current = new  Isotope(".filter-container", {
+         itemSelector: ".filter-item",
+         layoutMode: "fitRows"
+       });
+      }
     }
       return () => isotope.current?.destroy();
   }, []);

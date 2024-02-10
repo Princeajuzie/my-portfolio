@@ -86,7 +86,7 @@ export function Workssection() {
                   src={`https://alicalimli.com/_next/image?url=%2Fprojects%2Facmessenger.png&w=640&q=75`}
                   height={200}
                   width={200}
-                  className="w-[600px] h-auto mb-3"
+                  className="w-[600px] h-auto mb-3 object-cover"
                   alt="project 1"
                 />
               </Link>

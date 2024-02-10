@@ -76,7 +76,7 @@ export function Workssection() {
             </div>
           </div>
         </div>
-        <ul className="filter-container grid grid-cols-2 gap-3  justify-center mx-auto relative ">
+        <ul className="filter-container grid lg:grid-cols-2 grid-cols-1 gap-3  justify-center mx-auto relative ">
           {/* Map over content array and render items */}
 
           {content.map((item, index) => (

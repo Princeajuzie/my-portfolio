@@ -103,7 +103,7 @@ body {
 
 .filter-container{
   position: relative;
-  height: auto !important; 
+  height: max-content !important; 
 }
 .filter-item{
   position: unset !important;

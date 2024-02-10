@@ -8,14 +8,21 @@ export function Workssection() {
   const [filterKey, setFilterKey] = React.useState("*");
 
   React.useEffect(() => {
-    if (typeof window !== "undefined" && window.document) {
+    if (typeof window !== "undefined") {
       isotope.current = new Isotope(".filter-container", {
         itemSelector: ".filter-item",
         layoutMode: "fitRows"
       });
-      return () => isotope.current?.destroy();
     }
+
+    return () => {
+      if (isotope.current) {
+        isotope.current.destroy();
+        isotope.current = null;
+      }
+    };
   }, []);
+
   
   
   React.useEffect(() => {

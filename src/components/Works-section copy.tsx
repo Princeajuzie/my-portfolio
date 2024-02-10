@@ -24,16 +24,16 @@ export function Workssection() {
     { category: "server", text: "Server Content" },
   ];
 
-  // React.useEffect(() => {
-  //   if (typeof window !== "undefined" && window.document) {
-  //     Isotope = loadIsotope();
-  //     isotope.current = new Isotope(".filter-container", {
-  //       itemSelector: ".filter-item",
-  //       layoutMode: "fitRows",
-  //     });
-  //   }
-  //   return () => isotope.current?.destroy();
-  // }, []);
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && window.document) {
+      Isotope = loadIsotope();
+      isotope.current = new Isotope(".filter-container", {
+        itemSelector: ".filter-item",
+        layoutMode: "fitRows",
+      });
+    }
+    return () => isotope.current?.destroy();
+  }, []);
 
   const handleFilterKeyChange = (key: string) => () => {
     if (key === "*") {
@@ -69,23 +69,20 @@ export function Workssection() {
             </div>
           </div>
         </div>
-        <ul className=" grid grid-cols-2 gap-3  justify-center mx-auto relative" >
+        <ul className="filter-container flex flex-row gap-3  justify-center mx-auto">
           {/* Map over content array and render items */}
       
-         
-   
-          {content.map((item, index) => (
-            <li className="bg-[#2C2C37] w-full h-auto p-[10px]" key={index}>
+          <li className="bg-[#2C2C37] w-full h-auto p-[10px]">
             <Link href={"#"}>
               <img
                 src={`https://alicalimli.com/_next/image?url=%2Fprojects%2Facmessenger.png&w=640&q=75`}
-                height={200}
-                width={200}
+                height={300}
+                width={300}
                 className="w-[600px] h-auto mb-3"
                 alt="project 1"
               />
             </Link>
-            <div className="flex flex-col gap-4 justify-center items-center">
+            <div className="flex flex-col gap-4 ">
               <div>
                 <div className="w-full  pt-0 ">
                   <p className="text-xs text-muted-foreground">
@@ -122,7 +119,7 @@ export function Workssection() {
                 </div>
               </div>
               <div>
-                <div className=" pt-0 mt-auto items-start  pb-4 flex flex-col">
+                <div className=" pt-0 mt-auto items-start px-4 pb-4 flex flex-col">
                   <ul className="flex gap-1 flex-wrap">
                     <li>
                       <div className="inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-muted text-white/80 rounded-md bg-[#0C0A09]">
@@ -150,7 +147,7 @@ export function Workssection() {
                       </div>
                     </li>
                   </ul>
-                  <div className="flex flex-row mt-3 items-center justify-center gap-3 w-full text-center">
+                  <div className="flex flex-row bg-red-600 items-center justify-center gap-3 w-full text-center">
 
                   <Link href={"#"} className="flex items-center  text-[#FFC107] gap-1 uppercase font-[600] relative text-[10px] w-full">
                   <span  >Visit Website </span>
@@ -184,7 +181,17 @@ export function Workssection() {
               </div>
             </div>
           </li>
-          ))}
+          <li className="bg-[#2C2C37] w-full h-auto p-[30px]">
+            <h1>hello world</h1>
+          </li>
+          {/* {content.map((item, index) => (
+            <li key={index} className={`filter-item ${item.category}  bg-[#2C2C37] `}>
+              <div className="">
+
+              </div>
+              <span className="">{item.text}</span>
+            </li>
+          ))} */}
         </ul>
       </div>
     </div>

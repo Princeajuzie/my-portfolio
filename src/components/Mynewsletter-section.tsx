@@ -65,7 +65,7 @@ export function Mynewslettersection({ sheetdata }: any) {
 
   return (
     <>
-      <div className="  w-full lg:px-8 px-2">
+      <div className="  w-full lg:px-8 px-2 mt-[45px]">
         <div>
           <h4 className="text-[17px] font-[600] text-white mb-[30px] lg:text-start text-center">
             Newsletter

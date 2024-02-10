@@ -16,7 +16,7 @@ export function Workssection() {
       });
     }
     // cleanup
-    return () => typeof window !== "undefined"?isotope.current?.destroy() : void 0;
+    // return () => typeof window !== "undefined"?isotope.current?.destroy() : void 0;
   }, []);
 
   React.useEffect(() => {

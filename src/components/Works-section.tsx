@@ -1,7 +1,11 @@
 "use client"
-import Isotope from "isotope-layout";
+// import Isotope from "isotope-layout";
 import React from "react";
 import dynamic from "next/dynamic"
+const loadIsotope = () => require('isotope-layout');
+
+let Isotope;
+
 export function Workssection() {
   const isotope = React.useRef<Isotope | null>();
   // // store the filter keyword in a state
@@ -9,13 +13,12 @@ export function Workssection() {
 
   React.useEffect(() => {
     if (typeof window !== "undefined" && window.document) {
-      if(!isotope.current){
+      Isotope = loadIsotope();
+      isotope.current = new  Isotope(".filter-container", {
+       itemSelector: ".filter-item",
+       layoutMode: "fitRows"
+     });
 
-        isotope.current = new  Isotope(".filter-container", {
-         itemSelector: ".filter-item",
-         layoutMode: "fitRows"
-       });
-      }
     }
       return () => isotope.current?.destroy();
   }, []);

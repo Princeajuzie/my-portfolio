@@ -7,18 +7,23 @@ export function Workssection() {
   // // store the filter keyword in a state
   const [filterKey, setFilterKey] = React.useState("*");
 
-  // React.useEffect(() => {
-  //   if(typeof window !== "undefined"){
-
-  //     isotope.current = new Isotope(".filter-container", {
-  //       itemSelector: ".filter-item",
-  //       layoutMode: "fitRows"
-  //     });
-  //     return () => isotope.current?.destroy()
-  //   }
-  //   // cleanup
-  // }, []);
-
+  React.useEffect(() => {
+    let cleanupFunction = () => {}; // Define an empty cleanup function by default
+  
+    if (typeof window !== "undefined") {
+      isotope.current = new Isotope(".filter-container", {
+        itemSelector: ".filter-item",
+        layoutMode: "fitRows"
+      });
+  
+      // Define the cleanup function
+      cleanupFunction = () => isotope.current?.destroy();
+    }
+  
+    // Return the cleanup function
+    return cleanupFunction;
+  }, []);
+  
   React.useEffect(() => {
     if (filterKey === "*") isotope.current?.arrange({ filter: `*` });
     else isotope.current?.arrange({ filter: `.${filterKey}` });

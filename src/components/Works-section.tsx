@@ -80,7 +80,7 @@ export function Workssection() {
           {/* Map over content array and render items */}
 
           {content.map((item, index) => (
-            <li className={`bg-[#2C2C37] filter-item ${item.category} w-full h-auto p-[10px]`} key={index}>
+            <li className={`bg-[#2C2C37] filter-item ${item.category} w-full h-auto p-[10px] shadow-md`} key={index}>
               <Link href={"#"}>
                 <img
                   src={`https://alicalimli.com/_next/image?url=%2Fprojects%2Facmessenger.png&w=640&q=75`}

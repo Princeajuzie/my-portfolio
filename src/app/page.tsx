@@ -13,15 +13,18 @@ import {
 import Test from "@/components/tesxt";
 import Scrollbar from "smooth-scrollbar";
 import { useEffect } from "react";
-
+import { FaEllipsisV  } from "react-icons/fa";
 export default function Home() {
   useEffect(() => {
     Scrollbar.init(document.querySelector("#my-scrollbar1") as HTMLElement);
   }, []);
   return (
     <div className=" lg:p-[15px] p-0 bg-[#191923] h-screen w-[100vw] top-0 relative overflow-hidden">
-      <div className="fixed z-[99] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block"> 
+      <div className="fixed z-[99] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block "> 
+      <div className="flex items-center  h-full px-2 text-[20px]">
 
+      <FaEllipsisV  />
+      </div>
       </div>
       <div className="max-w-[1440px] ml-auto mr-auto bg-[#1e1e28] bg-cover w-full h-full relative overflow-hidden">
         <div className="relative flex flex-nowrap h-screen">

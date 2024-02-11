@@ -108,6 +108,12 @@ body {
 .filter-item{
   position: unset !important;
 }
+
+.art-info-bar{
+  transition: 0.55s ease-in-out;
+  background-color: #ffc107;
+
+} 
 /* 
 .swiper-slide {
   -ms-flex-negative: 0;

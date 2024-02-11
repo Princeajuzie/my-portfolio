@@ -50,7 +50,7 @@ export default function Home() {
                   <Test />
                 </div>
                 <div className="lg:flex  block">
-                  <div className={`h-screen lg:block  ${toggle ? "block  z-[999]" : "hidden"} `}>
+                  <div className={`h-screen lg:block  ${toggle ? " block translate-x-[290px] h-screen  z-[999] absolute  w-full left-[-290px]" : "hidden"} `}>
                     <ProfileCard HandleToggle={HandleToggle} />
                   </div>
                   <div

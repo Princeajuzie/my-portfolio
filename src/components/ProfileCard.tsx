@@ -44,8 +44,9 @@ export function ProfileCard({HandleToggle } : {HandleToggle:  ()=> void}) {
   return (
     <div className="h-screen flex ">
       <section
-        className="bg-[#20202a] w-[290px] min-w-[290px] shadow-md  relative z-40"
-        style={{ height: `calc(100vh - 30px)` }}
+        className={`bg-[#20202a]  h-full w-[290px] min-w-[290px] shadow-md  relative z-40`}
+
+      
       >
         <div className="px-[20px]">
           <div className="flex items-center justify-self-center flex-col absolute left-0 top-0 z-[9999] w-full p-[30px] h-[235px] bg-gradient-to-r from-[rgba(37,37,50,0.98)] to-[rgba(35,35,45,0.98)]">
@@ -239,7 +240,7 @@ export function ProfileCard({HandleToggle } : {HandleToggle:  ()=> void}) {
           </div>
         </div>
 
-        <div className="h-[50px] px-[35px] flex items-center justify-center gap-9 bg-gradient-to-r from-[rgba(37,37,50,0.98)] to-[rgba(35,35,45,0.98)] absolute z-[99] w-full">
+        <div className="h-[50px] lg:mt-0 mt-7 px-[35px] flex items-center justify-center gap-9 bg-gradient-to-r from-[rgba(37,37,50,0.98)] to-[rgba(35,35,45,0.98)] absolute z-[99] w-full">
           {Socials.map(({ name, link, icon }) => {
             return (
               <Link
@@ -254,7 +255,7 @@ export function ProfileCard({HandleToggle } : {HandleToggle:  ()=> void}) {
           })}
         </div>
       </section>
-      <div className="bg-red-600 w-full h-screen z-[999]" onClick={HandleToggle}>
+      <div className=" w-full h-screen z-[999] bg-[#1F1F2A] bg-opacity-90 " onClick={HandleToggle}>
 
       </div>
     </div>

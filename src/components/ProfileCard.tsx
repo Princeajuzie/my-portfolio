@@ -9,7 +9,7 @@ import { FaDownload } from "react-icons/fa6";
 import Scrollbar from "smooth-scrollbar";
 import { useEffect } from "react";
 
-export function ProfileCard() {
+export function ProfileCard({HandleToggle } : {HandleToggle:  ()=> void}) {
   const Socials = [
     {
       name: "linkedin",
@@ -42,7 +42,7 @@ export function ProfileCard() {
     Scrollbar.init(document.querySelector("#my-scrollbar") as HTMLElement);
   }, []);
   return (
-    <div className="h-screen">
+    <div className="h-screen flex ">
       <section
         className="bg-[#20202a] w-[290px] min-w-[290px] shadow-md  relative z-40"
         style={{ height: `calc(100vh - 30px)` }}
@@ -254,6 +254,9 @@ export function ProfileCard() {
           })}
         </div>
       </section>
+      <div className="bg-red-600 w-full h-screen z-[999]" onClick={HandleToggle}>
+
+      </div>
     </div>
   );
 }

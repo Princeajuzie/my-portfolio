@@ -16,10 +16,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 // // Install Swiper modules\
 
-export function Mynewslettersection({ sheetdata }: any) {
-  const appendNumber = useRef(500);
-  const prependNumber = useRef(1);
-  // Create array with 500 slides
+export function Mynewslettersection() {
 
   const [slides, setSlides] = useState(
     Array.from({ length: 5 }).map((_, index) => `Slide ${index + 1}`)

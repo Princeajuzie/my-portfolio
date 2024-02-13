@@ -57,9 +57,9 @@ export function Ratingsection({ sheetdata }: any) {
       console.log(res.status);
     } catch (error) {}
   };
-  useEffect(() => {
-    HandlefetchRate();
-  });
+  // useEffect(() => {
+  //   HandlefetchRate();
+  // });
 
   return (
     <>

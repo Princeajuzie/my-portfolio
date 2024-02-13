@@ -1,18 +1,45 @@
 import { FaUser, FaAt, FaEnvelope } from "react-icons/fa";
-import { useState } from "react";
-import emailjs from "@emailjs/browser"
+import React, { useState,useRef } from "react";
+import emailjs from "@emailjs/browser";
 export function Contactsection() {
-  const [form, setForm] = useState({});
 
-  const HandleInputChnage = (e: Event | any) => {
-    setForm({
-      ...form,
-      [e.target.id]: e.target.value,
-    });
-  };
-  const HandleSubmit = (e: Event | any ) => {
-    e.preventDefault()
-    console.log(form,"form data")
+   const formref = useRef<HTMLFormElement>()
+   const [pending, setPending]= useState(false)
+  const [sucesss, setsuccess ] = useState("Send Message")
+  const HandleSubmit = async (e: Event | any) => {
+    e.preventDefault();
+    setPending(true)
+    try {
+      
+      const res = await emailjs.sendForm(
+        `${process.env.NEXT_PUBLIC_SERVICEID}`,
+        `${process.env.NEXT_PUBLIC_TEMPLEATEID}`,
+        formref.current as unknown as string,
+       {  publicKey: `${process.env.NEXT_PUBLIC_OPTIONID}`}
+
+    
+      );
+
+
+      if(res.status === 200){
+        setPending(false)
+        setsuccess("Sent Successfully 🚀")
+      setTimeout(()=>{
+        setsuccess("Send Message")
+        if(typeof window !== "undefined"){
+
+          window.location.reload()
+        }
+      },2000)
+      }
+
+
+      console.log(res)
+    } catch (error) {
+      setPending(false)
+      setsuccess(`${error}`)
+      console.error(error)
+    }
   };
 
   return (
@@ -85,15 +112,15 @@ export function Contactsection() {
           </h4>
           <div>
             <div className="bg-[#2D2D39] p-[30px] mb-[30px] ">
-              <form onSubmit={HandleSubmit}>
+              <form onSubmit={HandleSubmit} ref={formref as React.RefObject<HTMLFormElement> }>
                 <div>
                   <div className="artinput">
                     <input
                       type="text"
-                      name=""
+                      name="full-Name"
                       id="name"
                       placeholder="Name"
-                      onChange={HandleInputChnage}
+                      required
                       className="h-[50px] w-full text-[#fafafc] pl-[65px] bg-[#242430] pr-[15px] shadow-md mb-0 outline-none inputfocus "
                     />
                     <label
@@ -109,10 +136,10 @@ export function Contactsection() {
                   <div className="artinput">
                     <input
                       type="email"
-                      name=""
+                      name="email"
                       id="email"
                       placeholder="Email"
-                      onChange={HandleInputChnage}
+                      required
                       className="h-[50px] w-full text-[#fafafc] pl-[65px] bg-[#242430] pr-[15px] shadow-md mb-0 outline-none inputfocus "
                     />
                     <label
@@ -129,7 +156,7 @@ export function Contactsection() {
                     <textarea
                       name="message"
                       id="message"
-                      onChange={HandleInputChnage}
+                      required
                       className=" w-full text-[#fafafc] h-[170px] pl-[65px] bg-[#242430] py-[20px] pr-[15px] shadow-md mb-0 outline-none inputfocus "
                       placeholder="Message"
                     ></textarea>
@@ -146,9 +173,10 @@ export function Contactsection() {
                 <div>
                   <input
                     type="submit"
-                    value="Send Message"
-                    onClick={HandleSubmit}
-                    className="text-[12px] text-[#20202a]  rounded-md  cursor-pointer leading-[1.5px] transition-[0.4s] ease-in-out h-[45px] py-0 px-[35px] bg-[#FFC107] font-[600]"
+                    value={`${pending? "sending... 🚀🚀"   : sucesss}`}
+                    onSubmit={HandleSubmit}
+                    disabled={pending}
+                    className={`text-[12px] text-[#20202a]  rounded-md ${pending? "bg-[#ffc1074a]" : ""}  cursor-pointer leading-[1.5px] transition-[0.4s] ease-in-out h-[45px] py-0 px-[35px] bg-[#FFC107] font-[600]`}
                   />
                 </div>
               </form>

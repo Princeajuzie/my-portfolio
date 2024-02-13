@@ -8,8 +8,9 @@ import Link from "next/link";
 import { FaDownload } from "react-icons/fa6";
 import Scrollbar from "smooth-scrollbar";
 import { useEffect } from "react";
+import { FaEllipsisV  } from "react-icons/fa";
 
-export function ProfileCard({HandleToggle } : {HandleToggle:  ()=> void}) {
+export function ProfileCard({HandleToggle,toggle } : {HandleToggle:  ()=> void,toggle: boolean}) {
   const Socials = [
     {
       name: "linkedin",
@@ -38,13 +39,17 @@ export function ProfileCard({HandleToggle } : {HandleToggle:  ()=> void}) {
     },
   ];
 
+
+  
   useEffect(() => {
     Scrollbar.init(document.querySelector("#my-scrollbar") as HTMLElement);
   }, []);
   return (
-    <div className="h-screen flex ">
+    <div  className={`lg:flex block  `}>
+      <div className={`flex  ${toggle? "lg:relative  absolute z-[999] w-[0px]  art-infomart art-active" : "relative  art-notactive"}`}>
+
       <section
-        className={`bg-[#20202a]  h-full w-[290px] min-w-[290px] shadow-md  relative z-40`}
+        className={`bg-[#20202a]  h-full w-[290px] min-w-[290px] shadow-md  relative z-[999] ${toggle ? "   h-screen   z-[999] absolute  w-[290px] left-[-290px]" : "hidden lg:block "} `}
 
       
       >
@@ -255,10 +260,14 @@ export function ProfileCard({HandleToggle } : {HandleToggle:  ()=> void}) {
           })}
         </div>
       </section>
-      <div className=" w-full h-screen z-[999] bg-[#1F1F2A] bg-opacity-90 " onClick={HandleToggle}>
-
       </div>
+      <div className={`flex  ${toggle? "  relative z-[99]  " : " art-notactive"}`}>
+
+    <div className={`${toggle?" lg:w-0 lg:h-0 w-screen h-screen  relative bg-[#25252F]   opacity-90 z-[99]  " : " art-notactive"}`} onClick={HandleToggle}>
+
+      </div> 
     </div>
+      </div>
   );
 }
 

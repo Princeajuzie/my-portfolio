@@ -100,7 +100,40 @@ body {
   /* background-color: green; */
 }
 
+.art-info-bar-btn {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  margin-left: auto;
+  pointer-events: all;
+  font-size: 14px;
+  padding: 30px;
 
+}
+.hand-menu{
+  transform: translateX(0);
+}
+.art-notactive {
+  transform: translateX(0px);
+  transition: 0.55s ease-in-out;
+}
+.art-active {
+  transform: translateX(290px);
+  position: absolute;
+}
+
+@media (min-width: 1024px) {
+  .art-active {
+    position: relative;
+
+  }
+
+}
+
+
+
+.art-infomart  {
+  transition: 0.55s ease-in-out;
+}
 .filter-container{
   position: relative;
   height: max-content !important; 

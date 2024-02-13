@@ -24,12 +24,23 @@ export default function Home() {
   useEffect(() => {
     Scrollbar.init(document.querySelector("#my-scrollbar1") as HTMLElement);
   }, []);
+
+    function HandleTogglea() {
+    if (typeof window !== "undefined") {
+      const element = document.querySelector('.art-active');
+      if (element) {
+        element.classList.toggle('art-active');
+      }
+    }
+  }
+
+
   return (
     <div className=" lg:p-[15px] p-0 bg-[#191923] h-screen w-[100vw] top-0 relative overflow-hidden">
       <div className="fixed z-[10] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block "> 
       <div className="flex items-center  h-full px-2 text-[20px]">
 
-      <FaEllipsisV  onClick={HandleToggle} />
+      <FaEllipsisV  onClick={HandleToggle} className={`${toggle ? "hand-menu" : ""}`} />
       </div>
       </div>
       <div className="max-w-[1440px] ml-auto mr-auto bg-[#1e1e28] bg-cover w-full h-full relative overflow-hidden">
@@ -50,8 +61,8 @@ export default function Home() {
                   <Test />
                 </div>
                 <div className="lg:flex  block">
-                  <div className={`h-screen lg:block  ${toggle ? " block translate-x-[290px] h-screen  z-[999] absolute  w-full left-[-290px]" : "hidden"} `}>
-                    <ProfileCard HandleToggle={HandleToggle} />
+                  <div className={`  ${toggle? "absolute" : "relative"}`}>
+                    <ProfileCard HandleToggle={HandleToggle} toggle={toggle}/>
                   </div>
                   <div
                     className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)]"

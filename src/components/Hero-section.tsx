@@ -55,7 +55,7 @@ export function Herosection() {
                   href="#."
                   className="py-[15px] px-[35px] bg-[#FFC107] rounded-md uppercase text-[#20202a] text-[700] mr-[15px]"
                 >
-                  <span>Explore now</span>
+                  <span className="font-[600]">Explore now</span>
                 </a>
                 <a
                   href="#."

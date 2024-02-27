@@ -38,9 +38,13 @@ export function Contactsection() {
     } catch (error) {
       setPending(false)
       setsuccess(`${error}`)
-      console.error(error)
+      setTimeout(()=>{
+        setsuccess("Send Message")
+      },2000)
     }
   };
+
+  
 
   return (
     <div>
@@ -120,6 +124,7 @@ export function Contactsection() {
                       name="full-Name"
                       id="name"
                       placeholder="Name"
+                      readOnly={pending}
                       required
                       className="h-[50px] w-full text-[#fafafc] pl-[65px] bg-[#242430] pr-[15px] shadow-md mb-0 outline-none inputfocus "
                     />
@@ -140,6 +145,7 @@ export function Contactsection() {
                       id="email"
                       placeholder="Email"
                       required
+                      readOnly={pending}
                       className="h-[50px] w-full text-[#fafafc] pl-[65px] bg-[#242430] pr-[15px] shadow-md mb-0 outline-none inputfocus "
                     />
                     <label
@@ -157,6 +163,7 @@ export function Contactsection() {
                       name="message"
                       id="message"
                       required
+                      readOnly={pending}
                       className=" w-full text-[#fafafc] h-[170px] pl-[65px] bg-[#242430] py-[20px] pr-[15px] shadow-md mb-0 outline-none inputfocus "
                       placeholder="Message"
                     ></textarea>
@@ -176,7 +183,7 @@ export function Contactsection() {
                     value={`${pending? "sending... 🚀🚀"   : sucesss}`}
                     onSubmit={HandleSubmit}
                     disabled={pending}
-                    className={`text-[12px] text-[#20202a]  rounded-md ${pending? "bg-[#ffc1074a]" : ""}  cursor-pointer leading-[1.5px] transition-[0.4s] ease-in-out h-[45px] py-0 px-[35px] bg-[#FFC107] font-[600]`}
+                    className={`text-[12px] text-[#20202a]  rounded-md ${pending? "bg-[#ffc1074a] cursor-not-allowed" : "cursor-pointer"}   leading-[1.5px] transition-[0.4s] ease-in-out h-[45px] py-0 px-[35px] bg-[#FFC107] font-[600]`}
                   />
                 </div>
               </form>

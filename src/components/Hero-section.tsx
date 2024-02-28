@@ -48,7 +48,7 @@ export function Herosection() {
                 <span>
                   <span className="wrap"></span>
                 </span>
-                &lt;<i className="text-[#FFC107]">code</i>&gt;
+                &lt;<i className="text-[#FFC107]">/code</i>&gt;
               </div>
               <div className="art-buttons-frame lg:flex items-center gap-5 lg:gap-3 lg:flex-row flex flex-col  text-center">
                 <a

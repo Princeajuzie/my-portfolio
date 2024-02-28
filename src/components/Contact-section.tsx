@@ -1,50 +1,41 @@
 import { FaUser, FaAt, FaEnvelope } from "react-icons/fa";
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 export function Contactsection() {
-
-   const formref = useRef<HTMLFormElement>()
-   const [pending, setPending]= useState(false)
-  const [sucesss, setsuccess ] = useState("Send Message")
+  const formref = useRef<HTMLFormElement>();
+  const [pending, setPending] = useState(false);
+  const [sucesss, setsuccess] = useState("Send Message");
   const HandleSubmit = async (e: Event | any) => {
     e.preventDefault();
-    setPending(true)
+    setPending(true);
     try {
-      
       const res = await emailjs.sendForm(
         `${process.env.NEXT_PUBLIC_SERVICEID}`,
         `${process.env.NEXT_PUBLIC_TEMPLEATEID}`,
         formref.current as unknown as string,
-       {  publicKey: `${process.env.NEXT_PUBLIC_OPTIONID}`}
-
-    
+        { publicKey: `${process.env.NEXT_PUBLIC_OPTIONID}` }
       );
 
-
-      if(res.status === 200){
-        setPending(false)
-        setsuccess("Sent Successfully 🚀")
-      setTimeout(()=>{
-        setsuccess("Send Message")
-        if(typeof window !== "undefined"){
-
-          window.location.reload()
-        }
-      },2000)
+      if (res.status === 200) {
+        setPending(false);
+        setsuccess("Sent Successfully 🚀");
+        setTimeout(() => {
+          setsuccess("Send Message");
+          if (typeof window !== "undefined") {
+            window.location.reload();
+          }
+        }, 2000);
       }
 
-
-      console.log(res)
+      console.log(res);
     } catch (error) {
-      setPending(false)
-      setsuccess(`${error}`)
-      setTimeout(()=>{
-        setsuccess("Send Message")
-      },2000)
+      setPending(false);
+      setsuccess(`${error}`);
+      setTimeout(() => {
+        setsuccess("Send Message");
+      }, 2000);
     }
   };
-
-  
 
   return (
     <div>
@@ -59,34 +50,16 @@ export function Contactsection() {
             <div className="py-[15px]">
               <ul className="flex flex-col">
                 <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">Country:</h6>
-                  <span>Canada</span>
+                  <h6 className="text-white text-[12px] font-[400]">Country:</h6>
+                  <span>Nigeria</span>
                 </li>
                 <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">City:</h6>
-                  <span>Toronto</span>
+                  <h6 className="text-white text-[12px] font-[400]">City:</h6>
+                  <span>PortHarcourt</span>
                 </li>
                 <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">Street:</h6>
-                  <span>20 Dellbank Rd</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="p-[30px] mb-[30px] bg-[#2C2C38]">
-            <div className="py-[15px]">
-              <ul className="flex flex-col">
-                <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">Country:</h6>
-                  <span>Canada</span>
-                </li>
-                <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">City:</h6>
-                  <span>Toronto</span>
-                </li>
-                <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">Street:</h6>
-                  <span>20 Dellbank Rd</span>
+                  <h6 className="text-white text-[12px] font-[400]">Street:</h6>
+                  <span>64 Pipeline Rd</span>
                 </li>
               </ul>
             </div>
@@ -95,12 +68,30 @@ export function Contactsection() {
             <div className="py-[15px]">
               <ul className="flex flex-col">
                 <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">Country:</h6>
-                  <span>Canada</span>
+                  <h6 className="text-white text-[12px] font-[400]">Email:</h6>
+                  <span>princeajuzie1@gmail.com</span>
                 </li>
                 <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">City:</h6>
-                  <span>Toronto</span>
+                  <h6 className="text-white text-[12px] font-[400]">Linkedin:</h6>
+                  <span>@princeajuzie</span>
+                </li>
+                <li className="flex  justify-between mb-[5px]">
+                  <h6 className="text-white text-[12px] font-[400]">Skype:</h6>
+                  <span>PrinceAjuize</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="p-[30px] mb-[30px] bg-[#2C2C38]">
+            <div className="py-[15px]">
+              <ul className="flex flex-col">
+                <li className="flex  justify-between mb-[5px]">
+                  <h6 className="text-white text-[12px] font-[400]">Personal:</h6>
+                  <span>+234 (808) 50 34 076</span>
+                </li>
+                <li className="flex  justify-between mb-[5px]">
+                  <h6 className="text-white text-[12px] font-[400]">Office:</h6>
+                  <span>+234 (903) 55 25 951</span>
                 </li>
                 <li className="flex  justify-between mb-[5px]">
                   <h6 className="text-[#FAFAFC]">Street:</h6>
@@ -116,7 +107,10 @@ export function Contactsection() {
           </h4>
           <div>
             <div className="bg-[#2D2D39] p-[30px] mb-[30px] ">
-              <form onSubmit={HandleSubmit} ref={formref as React.RefObject<HTMLFormElement> }>
+              <form
+                onSubmit={HandleSubmit}
+                ref={formref as React.RefObject<HTMLFormElement>}
+              >
                 <div>
                   <div className="artinput">
                     <input
@@ -180,10 +174,14 @@ export function Contactsection() {
                 <div>
                   <input
                     type="submit"
-                    value={`${pending? "sending... 🚀🚀"   : sucesss}`}
+                    value={`${pending ? "sending... 🚀🚀" : sucesss}`}
                     onSubmit={HandleSubmit}
                     disabled={pending}
-                    className={`text-[12px] text-[#20202a]  rounded-md ${pending? "bg-[#ffc1074a] cursor-not-allowed" : "cursor-pointer"}   leading-[1.5px] transition-[0.4s] ease-in-out h-[45px] py-0 px-[35px] bg-[#FFC107] font-[600]`}
+                    className={`text-[12px] text-[#20202a]  rounded-md ${
+                      pending
+                        ? "bg-[#ffc1074a] cursor-not-allowed"
+                        : "cursor-pointer"
+                    }   leading-[1.5px] transition-[0.4s] ease-in-out h-[45px] py-0 px-[35px] bg-[#FFC107] font-[600]`}
                   />
                 </div>
               </form>

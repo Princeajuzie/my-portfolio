@@ -12,16 +12,27 @@ import { FaStar } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
+import {
+  getDoc,
+  doc,
+  setDoc,
+  DocumentData,
+  getDocs,
+  updateDoc,
+  collectionGroup,
+} from "firebase/firestore";
+import { db } from "@/config/firebase";
 // import 'swiper/swiper-bundle.css';
 
 // // Install Swiper modules\
 
 export function Mynewslettersection() {
-
   const [slides, setSlides] = useState(
     Array.from({ length: 5 }).map((_, index) => `Slide ${index + 1}`)
   );
 
+  const [newsData, setNewsData] = React.useState<DocumentData[]>([]);
+  const [pending, setPending] = React.useState(true);
   const swiperRef = useRef<any>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -45,20 +56,28 @@ export function Mynewslettersection() {
     }
   };
 
-  const HandlefetchRate = async () => {
-    try {
-      const res = await Axiosrequest.get(
-        `${process.env.NEXT_PUBLIC_RATESHEET}`
-      );
-      if (res.status === 200) {
-        console.log(res.data);
+  React.useEffect(() => {
+    const HandleFetchcategory = async () => {
+      try {
+        const response = await getDocs(collectionGroup(db, `MyNewsletter`));
+
+        if (!response) {
+          throw new Error(`not authorized to make this request`);
+        }
+
+        const data = response.docs.map((docs) => {
+          return { ...docs.data(), id: docs.id };
+        });
+        setNewsData(data);
+        setPending(false);
+      } catch (err) {
+        setPending(false);
+        throw new Error(`${err}`);
       }
-      console.log(res.status);
-    } catch (error) {}
-  };
-  // useEffect(() => {
-  //   HandlefetchRate();
-  // });
+    };
+
+    HandleFetchcategory();
+  }, []);
 
   return (
     <>
@@ -87,53 +106,110 @@ export function Mynewslettersection() {
                   slidesPerView: 3,
                   spaceBetween: 10,
                 },
-             
               }}
               className=" py-6"
             >
-              {/* testimonial */}
-              {slides.map((slideContent, index) => (
-                <SwiperSlide
-                  key={slideContent}
-                  virtualIndex={index}
-                  className=" "
-                >
-                  <div
-                    className="lg:w-[280px] w-full mr-[30px]"
-                 
-                  >
-                    {/* blog post card */}
-                    <div className=" transform scale-[1] transition ease-in-out mb-0" >
-                      {/* post cover */}
-                      <a href="#." className="relative pb-[60%] block">
-                        {/* img */}
-                        <img src="https://miller.bslthemes.com/arter-demo/img/blog/2.jpg" alt="blog post" className="w-full h-full absolute object-cover position-[center] transition ease-in-out" />
-                      </a>
-                      {/* post cover end */}
-                      {/* post description */}
-                      <div className="p-[30px] relative bottom-0 bg-[#2C2C37]">
-                        {/* title */}
-                        <a href="#." className="text-[#ffff]">
-                          <h5 className="mb-[15px] text-[14px] font-[600]">Blog post title</h5>
-                        </a>
-                        {/* text */}
-                        <div className="mb-[15px] text-[#8c8c8e] text-[12px]">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Amet!
+              <div>
+                {pending ? (
+                  <div>
+                    {Array.from({ length: 5 }, (_, _index: number) => (
+                      <SwiperSlide
+                        key={_index}
+                        virtualIndex={_index}
+                        className=" "
+                      >
+                        <div className="lg:w-[280px] w-full  mr-[30px] animate-pulse">
+                          {/* blog post card */}
+                          <div className=" transform scale-[1] transition ease-in-out mb-0">
+                            {/* post cover */}
+                            <div className="relative pb-[60%] block">
+                              {/* img */}
+                            </div>
+                            {/* post cover end */}
+                            {/* post description */}
+                            <div className="py-[30px] px-[10px] relative bottom-0 bg-[#2C2C37]">
+                              {/* title */}
+                              <div className="text-[#ffff]">
+                                <h5 className="mb-[15px] text-[14px] font-[600]"></h5>
+                              </div>
+                              {/* text */}
+                              <div className="mb-[15px] text-[#8c8c8e] text-[12px]">
+                                loading...
+                              </div>
+                              {/* link */}
+
+                              <Link
+                                href={`#`}
+                                target="_blank"
+                                className="flex items-center  text-[#FFC107] gap-1 uppercase font-[600] relative text-[10px]"
+                              >
+                                <span>loading... Readmore link </span>
+                                <IoIosArrowForward />
+                              </Link>
+                            </div>
+                            {/* post description end */}
+                          </div>
+                          {/* blog post card end */}
                         </div>
-                        {/* link */}
-                  
-                        <Link href={"#"} className="flex items-center  text-[#FFC107] gap-1 uppercase font-[600] relative text-[10px]">
-                  <span>  Read more</span>
-                  <IoIosArrowForward />
-                </Link>
-                      </div>
-                      {/* post description end */}
-                    </div>
-                    {/* blog post card end */}
+                      </SwiperSlide>
+                    ))}
                   </div>
-                </SwiperSlide>
-              ))}
+                ) : (
+                  <div>
+                    {/* testimonial */}
+                    {newsData.map((slideContent) => (
+                      <SwiperSlide
+                        key={slideContent?.id}
+                        virtualIndex={slideContent?.id}
+                        className=" "
+                      >
+                        <div className="lg:w-[280px] w-full mr-[30px]">
+                          {/* blog post card */}
+                          <div className=" transform scale-[1] transition ease-in-out mb-0">
+                            {/* post cover */}
+                            <div className="relative pb-[60%] block">
+                              {/* img */}
+                              <Image
+                                src={slideContent?.projectimage}
+                                height={200}
+                                width={200}
+                                alt="blog post"
+                                className="w-full h-full absolute object-cover position-[center] transition ease-in-out"
+                              />
+                            </div>
+                            {/* post cover end */}
+                            {/* post description */}
+                            <div className="py-[30px] px-[10px] relative bottom-0 bg-[#2C2C37]">
+                              {/* title */}
+                              <div className="text-[#ffff]">
+                                <h5 className="mb-[15px] text-[14px] font-[600]">
+                                  {slideContent?.tittle}
+                                </h5>
+                              </div>
+                              {/* text */}
+                              <div className="mb-[15px] text-[#8c8c8e] text-[12px]">
+                                {slideContent?.message}
+                              </div>
+                              {/* link */}
+
+                              <Link
+                                href={`${slideContent?.newslink}`}
+                                target="_blank"
+                                className="flex items-center  text-[#FFC107] gap-1 uppercase font-[600] relative text-[10px]"
+                              >
+                                <span> Read more</span>
+                                <IoIosArrowForward />
+                              </Link>
+                            </div>
+                            {/* post description end */}
+                          </div>
+                          {/* blog post card end */}
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </div>
+                )}
+              </div>
             </Swiper>
           </div>
 

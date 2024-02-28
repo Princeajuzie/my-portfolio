@@ -14,11 +14,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // // Install Swiper modules\
 
-export function Ratingsection({ sheetdata }: any) {
-  const appendNumber = useRef(500);
-  const prependNumber = useRef(1);
-  // Create array with 500 slides
+interface Rating {
+  fullname: string;
+  readonly id: number;
+  uploadYourPicture: string;
+  howWouldYouRateMe: string;
+  whatWasTheExperienceLike?: string;
+}
 
+export function Ratingsection({ sheetdata }: any) {
+  // Create array with 500 slides
+  const [ratingData, setRatingData] = React.useState<Rating[]>([]);
+  const [pending, setPending] = React.useState<boolean>(true);
   const [slides, setSlides] = useState(
     Array.from({ length: 5 }).map((_, index) => `Slide ${index + 1}`)
   );
@@ -51,15 +58,22 @@ export function Ratingsection({ sheetdata }: any) {
       const res = await Axiosrequest.get(
         `${process.env.NEXT_PUBLIC_RATESHEET}`
       );
+      console.log(res, `response from sheet DB`);
       if (res.status === 200) {
+        setRatingData(res.data);
+        setPending(false);
         console.log(res.data);
       }
       console.log(res.status);
-    } catch (error) {}
+    } catch (error: Error | any) {
+      console.error(error);
+      setPending(false);
+      throw new Error(`${error}`);
+    }
   };
-  // useEffect(() => {
-  //   HandlefetchRate();
-  // });
+  useEffect(() => {
+    HandlefetchRate();
+  });
 
   return (
     <>
@@ -90,68 +104,124 @@ export function Ratingsection({ sheetdata }: any) {
               }}
               className=" py-6"
             >
-              {/* testimonial */}
-              {slides.map((slideContent, index) => (
-                <SwiperSlide
-                  key={slideContent}
-                  virtualIndex={index}
-                  className=" "
-                >
-                  <div className="relative p-[30px] bg-[#2D2D39]">
-                    {/* testimonial body */}
-                    <div className="testimonial-body">
-                      {/* photo */}
-                      <img
-                        className="absolute object-cover w-[65px] h-[65px] rounded-full right-[30px] top-[-15px] shadow-md"
-                        src="https://miller.bslthemes.com/arter-demo/img/testimonials/face-1.jpg"
-                        alt="face"
-                      />
-                      {/* name */}
-                      <h5 className="text-[14px] font-[600] text-[#fafafc]">
-                        Paul Trueman
-                      </h5>
-                      <div className="mb-[15px] text-[#646466] text-[11px] italic mt-[5px]">
-                        Template author
-                      </div>
-                      {/* text */}
-                      <div className="mb-[15px] text-[13.5px]">
-                        Working with Artur has been a pleasure. Better yet - I
-                        alerted them of a minor issue before going to sleep. The
-                        issue was fixed the next morning. I couldnt ask for
-                        better support. Thank you Artur! This is easily a 5 star
-                        freelancer.
-                      </div>
-                    </div>
-                    {/* testimonial body end */}
-                    {/* testimonial footer */}
-                    <div className="relative overflow-hidden flex justify-between">
-                      <div className="">
-                        {/* star rate */}
-                        <ul className="flex bg-[#20202a] mt-[5px] text-[15px] rounded-[30px] text-[#FFC107] py-[5px] px-[15px]">
-                          <li className="mr-[5px]">
-                            <FaStar className="font-[900]" />
-                          </li>
-                          <li className="mr-[5px]">
-                            <FaStar className="font-[900]" />
-                          </li>
-                          <li className="mr-[5px]">
-                            <FaStar className="font-[900]" />
-                          </li>
-                          <li className="mr-[5px]">
-                            <FaStar className="font-[900]" />
-                          </li>
-                          <li className="mr-[5px]">
-                            <FaStar className="font-[900]" />
-                          </li>
-                        </ul>
-                        {/* star rate end */}
-                      </div>
-                      <div className="art-right-side"></div>
-                    </div>
-                    {/* testimonial footer end */}
+              <div>
+                {pending ? (
+                  <div>
+                    {Array.from({ length: 5 }, (_, index) => (
+                      <SwiperSlide
+                        key={index}
+                        virtualIndex={index}
+                        className=" "
+                      >
+                        <div className="relative p-[30px] bg-[#2D2D39] animate-pulse">
+                          {/* testimonial body */}
+                          <div className="testimonial-body">
+                            {/* photo */}
+
+                            {/* name */}
+                            <h5 className="text-[14px] font-[600] text-[#fafafc]"></h5>
+                            <div className="mb-[15px] text-[#646466] text-[11px] italic mt-[5px]"></div>
+                            {/* text */}
+                            <div className="mb-[15px] text-[13.5px]">
+                              loading experience...
+                            </div>
+                          </div>
+                          {/* testimonial body end */}
+                          {/* testimonial footer */}
+                          <div className="relative overflow-hidden flex justify-between">
+                            <div className="">
+                              {/* star rate */}
+                              <ul className="flex bg-[#20202a] mt-[5px] text-[15px] rounded-[30px] text-[grey] animate-pulse py-[5px] px-[15px]">
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                              </ul>
+                              {/* star rate end */}
+                            </div>
+                            <div className="art-right-side"></div>
+                          </div>
+                          {/* testimonial footer end */}
+                        </div>
+                      </SwiperSlide>
+                    ))}
+
+                    {/* testimonial */}
                   </div>
-                </SwiperSlide>
-              ))}
+                ) : (
+                  <div>
+                    {/* testimonial */}
+                    {ratingData.map((slideContent) => (
+                      <SwiperSlide
+                        key={slideContent?.id}
+                        virtualIndex={slideContent?.id}
+                        className=" "
+                      >
+                        <div className="relative p-[30px] bg-[#2D2D39]">
+                          {/* testimonial body */}
+                          <div className="testimonial-body">
+                            {/* photo */}
+                            <Image
+                              className="absolute object-cover w-[65px] h-[65px] rounded-full right-[30px] top-[-15px] shadow-md"
+                              src={slideContent?.uploadYourPicture}
+                              alt="face"
+                            />
+                            {/* name */}
+                            <h5 className="text-[14px] font-[600] text-[#fafafc]">
+                              {slideContent?.fullname}
+                            </h5>
+                            <div className="mb-[15px] text-[#646466] text-[11px] italic mt-[5px]">
+                              {slideContent?.fullname}
+                            </div>
+                            {/* text */}
+                            <div className="mb-[15px] text-[13.5px]">
+                              {slideContent?.whatWasTheExperienceLike}
+                            </div>
+                          </div>
+                          {/* testimonial body end */}
+                          {/* testimonial footer */}
+                          <div className="relative overflow-hidden flex justify-between">
+                            <div className="">
+                              {/* star rate */}
+                              <ul className="flex bg-[#20202a] mt-[5px] text-[15px] rounded-[30px] text-[#FFC107] py-[5px] px-[15px]">
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                                <li className="mr-[5px]">
+                                  <FaStar className="font-[900]" />
+                                </li>
+                              </ul>
+                              {/* star rate end */}
+                            </div>
+                            <div className="art-right-side"></div>
+                          </div>
+                          {/* testimonial footer end */}
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </div>
+                )}
+              </div>
             </Swiper>
           </div>
 

@@ -94,8 +94,8 @@ export function Contactsection() {
                   <span>+234 (903) 55 25 951</span>
                 </li>
                 <li className="flex  justify-between mb-[5px]">
-                  <h6 className="text-[#FAFAFC]">Street:</h6>
-                  <span>20 Dellbank Rd</span>
+                  <h6 className="text-white text-[12px] font-[400]">Support service:</h6>
+                  <span>+234 (706) 23 62 262</span>
                 </li>
               </ul>
             </div>

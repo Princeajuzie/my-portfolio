@@ -3,24 +3,77 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";
+import {
+  getDoc,
+  doc,
+  setDoc,
+  DocumentData,
+  getDocs,
+  updateDoc,
+  collectionGroup,
+} from "firebase/firestore";
+import { db } from "@/config/firebase";
 const loadIsotope = () => require("isotope-layout");
 
 let Isotope;
 
 export function Workssection() {
-  interface CSSStyleDeclaration {
-    // other properties
-    width?: string | number;
-    // other properties
-  }
+  const [cat, setcat] = React.useState<DocumentData[]>([]);
+
+  React.useEffect(() => {
+    const HandleFetchcontent = async () => {
+      try {
+        const response = await getDocs(
+          collectionGroup(db, `Allworkcategories`)
+        );
+
+        if (!response) {
+          throw new Error(`not authorized to make this request`);
+        }
+
+        const data = response.docs.map((docs) => {
+          return { ...docs.data(), id: docs.id};
+        });
+        setcat(data)
+      } catch (err) {
+        throw new Error(`${err}`)
+      }
+    };
+
+    HandleFetchcontent()
+  }, []);
+  React.useEffect(() => {
+    const HandleFetchcategory = async () => {
+      try {
+        const response = await getDocs(
+          collectionGroup(db, `Allworkcategories`)
+        );
+
+        if (!response) {
+          throw new Error(`not authorized to make this request`);
+        }
+
+        const data = response.docs.map((docs) => {
+          return { ...docs.data(), id: docs.id};
+        });
+        setcat(data)
+      } catch (err) {
+        throw new Error(`${err}`)
+      }
+    };
+
+    HandleFetchcategory()
+  }, []);
+
+  console.log(`category data`, cat)
   const isotope = React.useRef<Isotope | null>();
 
-  const categories = [
-    { key: "*", label: "All Categories" },
-    { key: "web", label: "Web" },
-    { key: "server", label: "Server" },
-    { key: "app", label: "App" },
-  ];
+  // const categories = [
+  //   { key: "*", label: "All Categories" },
+  //   { key: "web", label: "Web" },
+  //   { key: "server", label: "Server" },
+  //   { key: "app", label: "App" },
+  // ];
 
   // Content for each category
   const content = [
@@ -31,7 +84,6 @@ export function Workssection() {
 
   React.useEffect(() => {
     if (typeof window !== "undefined" && window.document) {
-
       Isotope = loadIsotope();
       isotope.current = new Isotope(".filter-container", {
         itemSelector: ".filter-item",
@@ -62,15 +114,14 @@ export function Workssection() {
           <div className="pb-[30px]">
             <div className="lg:w-max">
               <div className="flex flex-row items-center justify-center">
-                {categories.map((category, index) => (
-                  <a
+                {cat.map((category, index) => (
+                  <div
                     key={index}
-                    href="#"
                     onClick={handleFilterKeyChange(category.key)}
                     className="relative uppercase text-[12px] inline-block mr-[15px] text-[#8c8c8e] font-[600] transition ease-in-out hover:text-white hover:text-shadow"
                   >
                     {category.label}
-                  </a>
+                  </div>
                 ))}
               </div>
             </div>
@@ -80,7 +131,10 @@ export function Workssection() {
           {/* Map over content array and render items */}
 
           {content.map((item, index) => (
-            <li className={`bg-[#2C2C37] filter-item ${item.category} w-full h-auto p-[10px] shadow-md`} key={index}>
+            <li
+              className={`bg-[#2C2C37] filter-item ${item.category} w-full h-auto p-[10px] shadow-md`}
+              key={index}
+            >
               <Link href={"#"}>
                 <img
                   src={`https://alicalimli.com/_next/image?url=%2Fprojects%2Facmessenger.png&w=640&q=75`}

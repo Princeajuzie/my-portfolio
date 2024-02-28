@@ -85,8 +85,7 @@ export function MyBackgroundsection() {
     return `${month} ${year}`;
   };
 
-  console.log(education);
-  console.log(work);
+
   return (
     <div className="overflow-hidden py-0 md:px-[30px] px-[10px] relative pt-[20px]">
       <div className="flex  gap-[20px] flex-col md:flex-row">

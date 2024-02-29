@@ -217,6 +217,7 @@ export function Workssection() {
                 <div>
                   <Image
                     src={item.projectimage}
+                    draggable={false}
                     height={200}
                     width={200}
                     className="w-[600px] h-auto mb-3 object-cover"

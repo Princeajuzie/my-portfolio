@@ -16,10 +16,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 interface Rating {
   fullname: string;
-  readonly id: number;
-  uploadYourPicture: string;
-  howWouldYouRateMe: string;
-  whatWasTheExperienceLike?: string;
+  readonly id?: number;
+  readonly uid?: string | number;
+  image: string;
+  experience: string;
+  rate: number;
 }
 
 export function Ratingsection({ sheetdata }: any) {
@@ -58,22 +59,21 @@ export function Ratingsection({ sheetdata }: any) {
       const res = await Axiosrequest.get(
         `${process.env.NEXT_PUBLIC_RATESHEET}`
       );
-      console.log(res, `response from sheet DB`);
       if (res.status === 200) {
-        setRatingData(res.data);
+         setRatingData(res.data.data);
         setPending(false);
-        console.log(res.data);
+
       }
-      console.log(res.status);
     } catch (error: Error | any) {
       console.error(error);
       setPending(false);
       throw new Error(`${error}`);
     }
   };
+  console.log(ratingData);
   useEffect(() => {
     HandlefetchRate();
-  });
+  },[]);
 
   return (
     <>
@@ -174,8 +174,10 @@ export function Ratingsection({ sheetdata }: any) {
                             {/* photo */}
                             <Image
                               className="absolute object-cover w-[65px] h-[65px] rounded-full right-[30px] top-[-15px] shadow-md"
-                              src={slideContent?.uploadYourPicture}
-                              alt="face"
+                              src={slideContent?.image}
+                              height={200}
+                              width={200}
+                              alt={`${slideContent?.fullname}`}
                             />
                             {/* name */}
                             <h5 className="text-[14px] font-[600] text-[#fafafc]">
@@ -186,7 +188,7 @@ export function Ratingsection({ sheetdata }: any) {
                             </div>
                             {/* text */}
                             <div className="mb-[15px] text-[13.5px]">
-                              {slideContent?.whatWasTheExperienceLike}
+                              {slideContent?.experience}
                             </div>
                           </div>
                           {/* testimonial body end */}

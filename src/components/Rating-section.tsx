@@ -21,6 +21,7 @@ interface Rating {
   image: string;
   experience: string;
   rate: number;
+  work: string;
 }
 
 export function Ratingsection({ sheetdata }: any) {
@@ -180,7 +181,7 @@ export function Ratingsection({ sheetdata }: any) {
                               {slideContent?.fullname}
                             </h5>
                             <div className="mb-[15px] text-[#646466] text-[11px] italic mt-[5px]">
-                              {slideContent?.fullname}
+                              {slideContent?.work}
                             </div>
                             {/* text */}
                             <div className="mb-[15px] text-[13.5px]">

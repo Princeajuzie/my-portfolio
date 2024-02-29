@@ -75,7 +75,7 @@ export function MyBackgroundsection() {
   }, []);
 
   const HandleDate = (dates: number) => {
-    const newDate = [
+   const months = [
       "Jan",
       "Feb",
       "Mar",
@@ -90,11 +90,15 @@ export function MyBackgroundsection() {
       "Dec",
     ];
     const date = new Date(dates);
-    const month = newDate[date.getMonth()];
-    const year = new Date().getFullYear();
 
-    return `${month} ${year}`;
-  };
+    const Year = date.getFullYear();
+
+    const month = months[date.getMonth()];
+
+    return `${month} ${Year}`;
+  }
+
+  console.log(work, "work")
 
   return (
     <div className="overflow-hidden py-0 md:px-[30px] px-[10px] relative pt-[20px]">
@@ -165,7 +169,7 @@ export function MyBackgroundsection() {
                             </div>
                             <div className="mb-[15px] ">
                               <span className="bg-[#20202a] text-[#646466] py-[5px] px-[15px] ml-auto rounded-[15px] text-[10px]">
-                                {HandleDate(startdate)} - {HandleDate(enddate)}
+                                {HandleDate(startdate)} - { tittle  === "Bachelor's degree"? "present" : HandleDate(enddate)}
                               </span>
                             </div>
                           </div>
@@ -253,7 +257,7 @@ export function MyBackgroundsection() {
                             </div>
                             <div className="mb-[15px] ">
                               <span className="bg-[#20202a] text-[#646466] py-[5px] px-[15px] ml-auto rounded-[15px] text-[10px]">
-                                {HandleDate(startdate)} - {HandleDate(enddate)}
+                              {HandleDate(startdate)} - { tittle  === "klipto"? "present" : HandleDate(enddate)}
                               </span>
                             </div>
                           </div>

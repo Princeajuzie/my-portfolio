@@ -27,9 +27,6 @@ export function Ratingsection({ sheetdata }: any) {
   // Create array with 500 slides
   const [ratingData, setRatingData] = React.useState<Rating[]>([]);
   const [pending, setPending] = React.useState<boolean>(true);
-  const [slides, setSlides] = useState(
-    Array.from({ length: 5 }).map((_, index) => `Slide ${index + 1}`)
-  );
 
   const swiperRef = useRef<any>(null);
   const [isBeginning, setIsBeginning] = useState(true);
@@ -60,9 +57,8 @@ export function Ratingsection({ sheetdata }: any) {
         `${process.env.NEXT_PUBLIC_RATESHEET}`
       );
       if (res.status === 200) {
-         setRatingData(res.data.data);
+        setRatingData(res.data.data);
         setPending(false);
-
       }
     } catch (error: Error | any) {
       console.error(error);
@@ -73,7 +69,7 @@ export function Ratingsection({ sheetdata }: any) {
   console.log(ratingData);
   useEffect(() => {
     HandlefetchRate();
-  },[]);
+  }, []);
 
   return (
     <>
@@ -196,22 +192,18 @@ export function Ratingsection({ sheetdata }: any) {
                           <div className="relative overflow-hidden flex justify-between">
                             <div className="">
                               {/* star rate */}
-                              <ul className="flex bg-[#20202a] mt-[5px] text-[15px] rounded-[30px] text-[#FFC107] py-[5px] px-[15px]">
-                                <li className="mr-[5px]">
-                                  <FaStar className="font-[900]" />
-                                </li>
-                                <li className="mr-[5px]">
-                                  <FaStar className="font-[900]" />
-                                </li>
-                                <li className="mr-[5px]">
-                                  <FaStar className="font-[900]" />
-                                </li>
-                                <li className="mr-[5px]">
-                                  <FaStar className="font-[900]" />
-                                </li>
-                                <li className="mr-[5px]">
-                                  <FaStar className="font-[900]" />
-                                </li>
+                              <ul className="flex bg-[#20202a] mt-[5px] text-[15px] rounded-[30px] py-[5px] px-[15px]">
+                                {Array.from({ length: 5 }, (_, _index) => (
+                                  <li className="mr-[5px]" key={_index}>
+                                    <FaStar
+                                      className={`font-[900] ${
+                                        _index < slideContent?.rate
+                                          ? "text-[#FFC107]"
+                                          : ""
+                                      }`}
+                                    />
+                                  </li>
+                                ))}
                               </ul>
                               {/* star rate end */}
                             </div>

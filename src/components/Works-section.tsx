@@ -206,12 +206,12 @@ export function Workssection() {
             ))}
           </ul>
         ) : (
-          <ul className="filter-container grid lg:grid-cols-2 grid-cols-1 gap-3  justify-center mx-auto relative ">
+          <ul className="filter-container grid lg:grid-cols-3 grid-cols-1 gap-3  justify-center mx-auto relative ">
             {/* Map over content array and render items */}
 
             {Allworkinfo.map((item, index) => (
               <li
-                className={`bg-[#2C2C37] filter-item ${item.category} w-full h-auto p-[10px] shadow-md`}
+                className={`bg-[#2C2C37] filter-item ${item.category} h-auto p-[10px] shadow-md`}
                 key={index}
               >
                 <div>

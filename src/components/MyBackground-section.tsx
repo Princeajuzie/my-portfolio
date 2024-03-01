@@ -75,7 +75,7 @@ export function MyBackgroundsection() {
   }, []);
 
   const HandleDate = (dates: number) => {
-   const months = [
+    const months = [
       "Jan",
       "Feb",
       "Mar",
@@ -96,9 +96,9 @@ export function MyBackgroundsection() {
     const month = months[date.getMonth()];
 
     return `${month} ${Year}`;
-  }
+  };
 
-  console.log(work, "work")
+  console.log(work, "work");
 
   return (
     <div className="overflow-hidden py-0 md:px-[30px] px-[10px] relative pt-[20px]">
@@ -169,20 +169,22 @@ export function MyBackgroundsection() {
                             </div>
                             <div className="mb-[15px] ">
                               <span className="bg-[#20202a] text-[#646466] py-[5px] px-[15px] ml-auto rounded-[15px] text-[10px]">
-                                {HandleDate(startdate)} - { tittle  === "Bachelor's degree"? "present" : HandleDate(enddate)}
+                                {HandleDate(startdate)} -{" "}
+                                {tittle === "Bachelor's degree"
+                                  ? "present"
+                                  : HandleDate(enddate)}
                               </span>
                             </div>
                           </div>
                           <p className="mb-[1rem] leading-5 text-[12px]">
                             {description}
                           </p>
-                          <Link
-                            href={"#"}
-                            className="flex items-center  text-[#FFC107] gap-1 uppercase font-[600] relative text-[10px]"
+                          <div
+                            className="flex items-center  text-[#FFC107] gap-1 uppercase  font-[600] relative text-[10px]"
                           >
-                            <span>Diplome</span>
-                            <IoIosArrowForward />
-                          </Link>
+                            <span>{tag}</span>
+                            {/* <IoIosArrowForward /> */}
+                          </div>
                         </div>
                       </div>
                     );
@@ -257,20 +259,22 @@ export function MyBackgroundsection() {
                             </div>
                             <div className="mb-[15px] ">
                               <span className="bg-[#20202a] text-[#646466] py-[5px] px-[15px] ml-auto rounded-[15px] text-[10px]">
-                              {HandleDate(startdate)} - { tittle  === "klipto"? "present" : HandleDate(enddate)}
+                                {HandleDate(startdate)} -{" "}
+                                {tittle === "klipto"
+                                  ? "present"
+                                  : HandleDate(enddate)}
                               </span>
                             </div>
                           </div>
                           <p className="mb-[1rem] leading-5 text-[12px]">
                             {description}
                           </p>
-                          <Link
-                            href={"#"}
+                          <div
                             className="flex items-center  text-[#FFC107] gap-1 uppercase font-[600] relative text-[10px]"
                           >
-                            <span>Diplome</span>
-                            <IoIosArrowForward />
-                          </Link>
+                            <span>{tag}</span>
+                            {/* <IoIosArrowForward /> */}
+                          </div>
                         </div>
                       </div>
                     );

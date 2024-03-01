@@ -46,14 +46,13 @@ export function Herosection() {
                 build{" "}
                 <TypeAnimation
                   sequence={[
-                    "web interfaces.", // Types 'One'
+                    "real time server.", // Types 'One'
                     1000, // Waits 1s
-                    "ios and android applications", // Deletes 'One' and types 'Two'
+                    "web applications", // Deletes 'One' and types 'Two'
                     2000, // Waits 2s
-                    "design mocups", // Types 'Three' without deleting 'Two'
+                    "mobile application", // Types 'Three' without deleting 'Two'
                     1000,
                     "automation tools.",
-                 
                   ]}
                   wrapper="span"
                   cursor={true}

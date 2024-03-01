@@ -45,7 +45,7 @@ export function ProfileCard({
   ];
 
   return (
-    <div className={`lg:flex block  `}>
+    <div className={`lg:flex block  bodys`}>
       <div
         className={`flex  ${
           toggle

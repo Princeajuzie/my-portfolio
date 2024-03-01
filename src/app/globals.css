@@ -124,6 +124,9 @@ body {
   position: absolute;
   transition: 1s ease-in-out;
 }
+.bodys{
+  transition: 0.55s ease-in-out;
+}
 
 
 

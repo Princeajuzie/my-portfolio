@@ -8,40 +8,29 @@ import {
   Workssection,
   Contactsection,
   Footersection,
-  Mynewslettersection
+  Mynewslettersection,
 } from "@/components";
-import Test from "@/components/tesxt";
-import Scrollbar from "smooth-scrollbar";
 import { useEffect, useState } from "react";
-import { FaEllipsisV  } from "react-icons/fa";
+import { FaEllipsisV } from "react-icons/fa";
 export default function Home() {
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
 
-  const HandleToggle = ()=>{
-    setToggle((prev)=> !prev)
-    console.log(toggle)
-  }
-  useEffect(() => {
-    Scrollbar.init(document.querySelector("#my-scrollbar1") as HTMLElement);
-  }, []);
+  const HandleToggle = () => {
+    setToggle((prev) => !prev);
+    console.log(toggle);
+  };
 
-    function HandleTogglea() {
-    if (typeof window !== "undefined") {
-      const element = document.querySelector('.art-active');
-      if (element) {
-        element.classList.toggle('art-active');
-      }
-    }
-  }
 
 
   return (
     <div className=" lg:p-[15px] p-0 bg-[#191923] h-screen w-[100vw] top-0 relative overflow-hidden">
-      <div className="fixed z-[10] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block "> 
-      <div className="flex items-center  h-full px-2 text-[20px]">
-
-      <FaEllipsisV  onClick={HandleToggle} className={`${toggle ? "hand-menu" : ""}`} />
-      </div>
+      <div className="fixed z-[10] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block ">
+        <div className="flex items-center  h-full px-2 text-[20px]">
+          <FaEllipsisV
+            onClick={HandleToggle}
+            className={`${toggle ? "hand-menu" : ""}`}
+          />
+        </div>
       </div>
       <div className="max-w-[1440px] ml-auto mr-auto bg-[#1e1e28] bg-cover w-full h-full relative overflow-hidden">
         <div className="relative flex flex-nowrap h-screen">
@@ -57,33 +46,29 @@ export default function Home() {
             <section className="relative bg-gradient-to-b from-[rgba(30,30,40,0.93)] via-[rgba(30,30,40,0.96)] to-[rgba(30,30,40,0.99)]  h-screen w-full">
               <div className="h-screen">
                 <div className="hidden">
-                  <Test />
-                  <Test />
+                  {/* <Test />
+                  <Test /> */}
                 </div>
                 <div className="lg:flex  block">
-                  <div className={`  ${toggle? "absolute" : "relative"}`}>
-                    <ProfileCard HandleToggle={HandleToggle} toggle={toggle}/>
+                  <div className={`  ${toggle ? "absolute" : "relative"}`}>
+                    <ProfileCard HandleToggle={HandleToggle} toggle={toggle} />
                   </div>
-                  <div
-                    className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)]"
-                    id="my-scrollbar1"
-                  >
+                  <div className="lg:pt-0 pt-[94px] h-screen lg:h-[calc(100vh-30px)] overflow-y-scroll">
                     <Herosection />
                     <MyBackgroundsection />
-                  
+
                     <div className=" ">
-
-                    <Ratingsection />
-                    <div className="h-max relative">
-
-                      <Workssection />
-                    </div>
+                      <Ratingsection />
+                      <div className="h-max relative" id="work">
+                        <Workssection />
+                      </div>
                       <Mynewslettersection />
-                   <Contactsection />
-                   <div className="lg:px-8 px-2"> 
-
-                   <Footersection />
-                   </div>
+                      <div id="contact">
+                        <Contactsection />
+                      </div>
+                      <div className="lg:px-8 px-2">
+                        <Footersection />
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -4,6 +4,27 @@ import { TypeAnimation } from "react-type-animation";
 import { IoIosArrowForward } from "react-icons/io";
 
 export function Herosection() {
+  function Scrolto() {
+    const id = document.getElementById("contact");
+    if (id) {
+      id.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      throw new Error("Section not found!");
+    }
+  }
+
+  function scrollToWork() {
+    const id = document.getElementById("work");
+    if (id) {
+      id.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      throw new Error("Section not found!");
+    }
+  }
   return (
     <div className="xl:px-8 lg:px-2 lg:pt-8 px-[10px] py-0  relative w-full ">
       <div
@@ -51,19 +72,19 @@ export function Herosection() {
                 &lt;<i className="text-[#FFC107]">/code</i>&gt;
               </div>
               <div className="art-buttons-frame lg:flex items-center gap-5 lg:gap-3 lg:flex-row flex flex-col  text-center">
-                <a
-                  href="#."
-                  className="py-[15px] px-[35px] bg-[#FFC107] rounded-md uppercase text-[#20202a] text-[700] mr-[15px]"
+                <div
+                  className="py-[15px] px-[35px] bg-[#FFC107] rounded-md uppercase text-[#20202a] text-[700] mr-[15px] cursor-pointer"
+                  onClick={scrollToWork}
                 >
                   <span className="font-[600]">Explore now</span>
-                </a>
-                <a
-                  href="#."
-                  className="flex text-[#fff] items-center gap-2 uppercase text-center  hover:transition-transform hover:duration-400 hover:ease-in-out"
+                </div>
+                <div
+                  className="flex text-[#fff] cursor-pointer items-center gap-2 uppercase text-center  hover:transition-transform hover:duration-400 hover:ease-in-out"
+                  onClick={Scrolto}
                 >
                   <span className="text-center">Hire me</span>
                   <IoIosArrowForward />
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -75,9 +96,7 @@ export function Herosection() {
             className="art-banner-photo h-auto   lg:w-[320px] lg:block hidden  right-8 bottom-0 absolute"
           />
         </div>
-     
       </div>
-
     </div>
   );
 }

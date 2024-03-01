@@ -163,21 +163,21 @@ body {
   transition-property: transform, -webkit-transform
 } */
 
-.scrollbar-track-x,
-.scrollbar-thumb-x {
-  height: 5px !important;
-  opacity: 0;
+
+
+::-webkit-scrollbar{
+  margin-top: 2px;
+  width: 6px;
+  height: 8px;
 }
 
-.scrollbar-track-y,
-.scrollbar-thumb-y :hover {
-  opacity: 0;
-  display: none !important;
+::-webkit-scrollbar-track{
+  background-color: #20202A;
 }
 
-.scrollbar-track-y,
-.scrollbar-thumb-y {
-  width: 5px !important;
-  opacity: 0;
-  display: none !important;
+::-webkit-scrollbar-thumb{
+  background-color: #ffc107;
+  border-radius: 10px;
 }
+
+

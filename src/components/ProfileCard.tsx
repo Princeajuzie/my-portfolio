@@ -6,7 +6,6 @@ import { IoIosMail } from "react-icons/io";
 import { BsGlobe } from "react-icons/bs";
 import Link from "next/link";
 import { FaDownload } from "react-icons/fa6";
-import Scrollbar from "smooth-scrollbar";
 import { useEffect } from "react";
 import { FaEllipsisV } from "react-icons/fa";
 
@@ -45,9 +44,7 @@ export function ProfileCard({
     },
   ];
 
-  useEffect(() => {
-    Scrollbar.init(document.querySelector("#my-scrollbar") as HTMLElement);
-  }, []);
+
   return (
     <div className={`lg:flex block  `}>
       <div

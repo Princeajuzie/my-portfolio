@@ -20,11 +20,9 @@ export default function Home() {
     console.log(toggle);
   };
 
-
-
   return (
     <div className=" lg:p-[15px] p-0 bg-[#191923] h-screen w-[100vw] top-0 relative overflow-hidden">
-      <div className="fixed z-[10] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block ">
+      <div className="fixed z-[999] w-full h-[70px] bg-[#20202a] shadow-md lg:hidden block ">
         <div className="flex items-center  h-full px-2 text-[20px]">
           <FaEllipsisV
             onClick={HandleToggle}

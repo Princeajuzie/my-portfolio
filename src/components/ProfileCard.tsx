@@ -44,14 +44,13 @@ export function ProfileCard({
     },
   ];
 
-
   return (
     <div className={`lg:flex block  `}>
       <div
         className={`flex  ${
           toggle
             ? "lg:relative  absolute z-[999] w-[0px]  art-infomart art-active"
-            : "relative  art-notactive"
+            : "relative"
         }`}
       >
         <section
@@ -269,7 +268,7 @@ export function ProfileCard({
           </div>
         </section>
       </div>
-      <div
+      {/* <div
         className={`flex  ${toggle ? "  relative z-[99]  " : " art-notactive"}`}
       >
         <div
@@ -280,7 +279,7 @@ export function ProfileCard({
           }`}
           onClick={HandleToggle}
         ></div>
-      </div>
+      </div> */}
     </div>
   );
 }

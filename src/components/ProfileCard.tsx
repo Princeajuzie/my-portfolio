@@ -49,7 +49,7 @@ export function ProfileCard({
       <div
         className={`flex  ${
           toggle
-            ? "lg:relative  absolute z-[999] w-[0px]   art-active"
+            ? "lg:relative  absolute z-[999] w-[0px]  art-infomart art-active"
             : "relative"
         }`}
       >

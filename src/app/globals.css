@@ -122,21 +122,13 @@ body {
 .art-active {
   transform: translateX(290px);
   position: absolute;
-}
-
-@media (min-width: 1024px) {
-  .art-active {
-    position: relative;
-
-  }
-
+  transition: 1s ease-in-out;
 }
 
 
 
-.art-infomart  {
-  transition: 0.55s ease-in-out;
-}
+
+
 .filter-container{
   position: relative;
   height: max-content !important; 

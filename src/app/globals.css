@@ -8,7 +8,7 @@
 /* Courier Prime Font */
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-*{
+* {
   font-family: "Poppins", sans-serif;
 }
 ::after,
@@ -31,7 +31,6 @@ body {
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
 }
-
 
 .App {
   width: 500px;
@@ -87,7 +86,8 @@ body {
 .swiper-wrapper {
   position: relative;
   width: fit-content;
-  transform: translate3d(-394px, 0px, 0px); transition-duration: 0ms;
+  transform: translate3d(-394px, 0px, 0px);
+  transition-duration: 0ms;
   height: 100%;
   z-index: 1;
   display: -webkit-box;
@@ -110,9 +110,8 @@ body {
   pointer-events: all;
   font-size: 14px;
   padding: 30px;
-
 }
-.hand-menu{
+.hand-menu {
   transform: translateX(0);
 }
 .art-notactive {
@@ -122,29 +121,21 @@ body {
 .art-active {
   transform: translateX(290px);
   position: absolute;
-  transition: 1s ease-in-out;
-}
-.bodys{
-  transition: 0.55s ease-in-out;
+  transition: 0.22s ease-in-out;
 }
 
-
-
-
-
-.filter-container{
+.filter-container {
   position: relative;
-  height: max-content !important; 
+  height: max-content !important;
 }
-.filter-item{
+.filter-item {
   position: unset !important;
 }
 
-.art-info-bar{
+.art-info-bar {
   transition: 0.55s ease-in-out;
   background-color: #ffc107;
-
-} 
+}
 /* 
 .swiper-slide {
   -ms-flex-negative: 0;
@@ -158,21 +149,17 @@ body {
   transition-property: transform, -webkit-transform
 } */
 
-
-
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   margin-top: 2px;
   width: 6px;
   height: 8px;
 }
 
-::-webkit-scrollbar-track{
-  background-color: #20202A;
+::-webkit-scrollbar-track {
+  background-color: #20202a;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #ffc107;
   border-radius: 10px;
 }
-
-

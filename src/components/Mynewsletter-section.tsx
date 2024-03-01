@@ -163,7 +163,7 @@ export function Mynewslettersection() {
                         virtualIndex={slideContent?.id}
                         className=" "
                       >
-                        <div className="lg:w-[280px] w-full mr-[30px]">
+                        <div className="lg:w-[280px]   w-full mr-[30px]">
                           {/* blog post card */}
                           <div className=" transform scale-[1] transition ease-in-out mb-0">
                             {/* post cover */}
@@ -179,7 +179,7 @@ export function Mynewslettersection() {
                             </div>
                             {/* post cover end */}
                             {/* post description */}
-                            <div className="py-[30px] px-[10px] relative bottom-0 bg-[#2C2C37]">
+                            <div className="py-[30px] px-[10px] h-36  relative bottom-0 bg-[#2C2C37]">
                               {/* title */}
                               <div className="text-[#ffff]">
                                 <h5 className="mb-[15px] text-[14px] font-[600]">
@@ -187,7 +187,7 @@ export function Mynewslettersection() {
                                 </h5>
                               </div>
                               {/* text */}
-                              <div className="mb-[15px] text-[#8c8c8e] text-[12px]">
+                              <div className="mb-[15px] text-[#8c8c8e] text-[12px] w-[250px] overflow-hidden whitespace-nowrap text-ellipsis">
                                 {slideContent?.message}
                               </div>
                               {/* link */}
@@ -285,6 +285,8 @@ export function Mynewslettersection() {
           </div>
         </div>
       </div>
+
+
     </>
   );
 }

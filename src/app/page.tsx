@@ -64,7 +64,23 @@ export default function Home() {
                       <div id="contact">
                         <Contactsection />
                       </div>
+
                       <div className="lg:px-8 px-2">
+                        <div className="pb-5">
+                          <iframe
+                            src="https://techminds.substack.com/embed"
+                            className="w-full bg-[#2D2D39]"
+                            width={480}
+                            height={150}
+                            color="#2D2D39"
+                            style={{
+                              background: "#2D2D39",
+                              backgroundColor: "#2D2D39",
+                            }}
+                            frameBorder={0}
+                            scrolling="no"
+                          />
+                        </div>
                         <Footersection />
                       </div>
                     </div>

@@ -53,9 +53,7 @@ export function Herosection() {
                     "design mocups", // Types 'Three' without deleting 'Two'
                     1000,
                     "automation tools.",
-                    () => {
-                      console.log("Sequence completed");
-                    },
+                 
                   ]}
                   wrapper="span"
                   cursor={true}

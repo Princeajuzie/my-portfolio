@@ -243,6 +243,7 @@ export function ProfileCard({
               <div>
                 <Link
                   href={"/resources/svg/cv.pdf"}
+                  target="_blank"
                   className="flex items-center gap-2 mt-4 font-[600] uppercase"
                   download="cv"
                 >

@@ -38,8 +38,8 @@ export function Herosection() {
           <div className=" lg:w-[calc(100vw-550px)] ">
             <div className="  self-center flex flex-col gap-4 items-center text-center lg:text-start lg:justify-start lg:items-start justify-center   lg:flex lg:flex-col lg:gap-4">
               <h1 className="mb-15 text-white lg:text-[36px]  text-[46px]  font-[800]">
-                Discover my Amazing <br />
-                Art Space!
+                Join Me on a Journey <br />
+                Through Tech
               </h1>
               <div className="art-lg-text art-code lg:mb-[25px] mb-[10px] text-[#fff] text-[16px] lg:min-h-0 min-h-[70px]">
                 &lt;<i className="text-[#FFC107] text-[16px]">code</i>&gt; I

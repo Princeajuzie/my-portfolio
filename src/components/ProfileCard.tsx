@@ -67,7 +67,7 @@ export function ProfileCard({
                   height={300}
                   width={300}
                   src="/resources/images/avatar.jpeg"
-                  alt="avatar"
+                  alt="Prince Ajuzie"
                   className="w-full h-full rounded-full mx-auto object-contain"
                 />
 

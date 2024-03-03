@@ -103,8 +103,9 @@ export function ProfileCard({
                     </g>
                   </svg>
                 </h5>
-                <p className="text-[12px] w-44">
-                  A Software Engneer & Technical Writer{" "}
+                <p className="text-[12px] w-[265px]">
+                  Software engineer | Author @ Tech minds 💡 | SAAS Builder in
+                  public
                 </p>
               </div>
             </div>

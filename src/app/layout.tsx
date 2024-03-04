@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Prince Ajuzie - Fullstack Engineer",
   description:
-    "Welcome to Prince Ajuzie Portfolio A Multifaceted Solopreneur | SAAS Builder in Public 🚀 | Technical Writer 📝 | Shaping tech solutions and sharing the journey.  ",
+    "Welcome to Prince Ajuzie Portfolio A Multifaceted Solopreneur | SAAS Builder in Public 🚀 | Technical Writer 📝 | Shaping tech solutions and sharing the journey.",
 };
 
 export default function RootLayout({

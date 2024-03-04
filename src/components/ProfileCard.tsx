@@ -215,7 +215,7 @@ export function ProfileCard({
                     >
                       <path
                         d="M50 3.5a46.5 46.5 0 110 93 46.5 46.5 0 110-93"
-                        stroke="#191923"
+                        stroke="#eee"
                         strokeWidth={7}
                         fill="none"
                       />
@@ -223,18 +223,17 @@ export function ProfileCard({
                         d="M50 3.5a46.5 46.5 0 110 93 46.5 46.5 0 110-93"
                         stroke="#FFC107"
                         strokeWidth={7}
-                        strokeDasharray="250.273,292.273"
-                        strokeDashoffset="30.2273"
+                        strokeDasharray="292.273,292.273"
                         fill="none"
                       />
                     </svg>
                     <div
-                      className="absolute left-[50%] top-[50%] p-0  m-0 text-[#818184] "
+                      className="absolute left-[50%]  top-[50%] p-0  m-0 text-[#818184 "
                       style={{
                         transform: "translate(-50%, -50%)",
                       }}
                     >
-                      80%
+                      100%
                     </div>
                   </div>
                   <h6 className="text-white text-[12px] font-[600]">English</h6>
